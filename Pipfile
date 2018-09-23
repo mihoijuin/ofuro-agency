@@ -4,11 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django = "*"
 dj-database-url = "*"
 gunicorn = "*"
 whitenoise = "*"
 "psycopg2" = "*"
+django = "==2.0.8"
+tweepy = "*"
+social-auth-app-django = "*"
 
 [dev-packages]
 
