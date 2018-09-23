@@ -122,8 +122,8 @@ DATABASES['default'] = dj_database_url.config()
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-SOCIAL_AUTH_TWITTER_KEY = ''   # Consumer Key
-SOCIAL_AUTH_TWITTER_SECRET = ''  # Consumer Secret
+SOCIAL_AUTH_TWITTER_KEY = '9Z5NEN0A2RPmAC9l2N6lRlgAV'   # Consumer Key
+SOCIAL_AUTH_TWITTER_SECRET = 'noTTwUyNXxHYFzKMm4JJk4D7HxsHQXWOwZmDqjNA6sz4ASuocT'  # Consumer Secret
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/orderd'    # リダイレクトURL
 
 
