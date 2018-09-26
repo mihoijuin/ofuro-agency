@@ -41,6 +41,6 @@
 
   <div>
     <p>＼Twitter連携画面に移動します／</p>
-    <button onclick="location.href='{% url 'social:begin' 'twitter' %}'"><span class="fab fa-twitter">お風呂めんどくさいので代わりに入ってもらう</span></button>
+    <a href="{% url 'social:begin' 'twitter' %}"><span class="fab fa-twitter">お風呂めんどくさいので代わりに入ってもらう</span></a>
   </div>
 {% endblock %}
