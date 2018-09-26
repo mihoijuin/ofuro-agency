@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="top">
+    <div class="top-wrapper">
+      <h1>お風呂代理店</h1>
+      <p>キャッチコピー的なのが1行</p>
+    </div>
+  </div>
+
+  <div class="descriptions">
+    <section class="description">
+      <img src="{% static 'images/ofuro-duck01.png' %}" alt="">
+      <h3>1.お風呂めんどくさい</h3>
+      <p>
+        なんか説明を3行くらい<br>
+        なんか説明を3行くらい<br>
+        なんか説明を3行くらい<br>
+      </p>
+    </section>
+    <section class="description">
+      <img src="{% static 'images/ofuro-duck01.png' %}" alt="">
+      <h3>2.ツイッター連携して申し込み</h3>
+      <p>
+        なんか説明を3行くらい<br>
+        なんか説明を3行くらい<br>
+        なんか説明を3行くらい<br>
+      </p>
+    </section>
+    <section class="description">
+      <img src="{% static 'images/ofuro-duck01.png' %}" alt="">
+      <h3>3.代わりにお風呂入ります</h3>
+      <p>
+        なんか説明を3行くらい<br>
+        なんか説明を3行くらい<br>
+        なんか説明を3行くらい<br>
+      </p>
+    </section>
+  </div>
+
+  <div>
+    <p>＼Twitter連携画面に移動します／</p>
+    <a href="{% url 'social:begin' 'twitter' %}"><span class="fab fa-twitter">お風呂めんどくさいので代わりに入ってもらう</span></a>
+  </div>
+{% endblock %}
