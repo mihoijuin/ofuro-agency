@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}申し込み完了 - お風呂代理店{% endblock %}
 
 {% block content %}
   <h2>＼{{ user.access_token.screen_name }}さま、ご注文承りました🐤♨️／</h2>
+  <img src="{% static 'images/ofuro-duck02.png' %}" alt="">
   <p>
     お風呂代行完了後に<br>
     Twitterにてご連絡いたしますのでしばしお待ちください🐤
