@@ -1,5 +1,6 @@
 import os
 
+# Herokuデプロイ用
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -27,8 +28,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ofuro',
-    'social_django',
+    'ofuro',    # app
+    'social_django',    # Twitter認証用
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # Twitter認証用
                 'social_django.context_processors.backends',
+                # Twitter認証用
                 'social_django.context_processors.login_redirect',
             ],
         },
@@ -118,20 +121,25 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
+# Herokuデプロイ用
 DATABASES['default'] = dj_database_url.config()
 
+# Herokuデプロイ用
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+# Twitter認証用
 AUTHENTICATION_BACKENDS = [
     'social_core.backends.twitter.TwitterOAuth',
     'django.contrib.auth.backends.ModelBackend',
 ]
 
+# Twitter認証用
 SOCIAL_AUTH_TWITTER_KEY = '9Z5NEN0A2RPmAC9l2N6lRlgAV'   # Consumer Key
 SOCIAL_AUTH_TWITTER_SECRET = 'noTTwUyNXxHYFzKMm4JJk4D7HxsHQXWOwZmDqjNA6sz4ASuocT'  # Consumer Secret
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/ordered'    # リダイレクトURL
 
 
+# Herokuデプロイ用
 try:
     from .local_settings import *
 except ImportError:
