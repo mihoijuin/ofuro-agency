@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
+    <!-- ? ここにタイトルの基本形を登録して他のテンプレートで使い回せないかな〜 -->
     <title>{% block title %}{% endblock %}</title>
 
     <!-- Required meta tags -->
@@ -9,6 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- OGP -->
+    <!-- TODO OGPは後で追加する -->
+    <!-- ? ここも一部blockにしてテンプレートごとに設定するんがいいかも？ -->
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -16,6 +19,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!-- Original CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- TODO faviconは後ほど追加する -->
+
   </head>
   <body>
     <header>
