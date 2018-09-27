@@ -12,6 +12,7 @@ def ordered(request):
     # ? 並行処理かな？とは思っている
     try:
         reply_bot = TweetBot()
+        # TODO ここでスクリーンネームでなくユーザ名を表示する方法がわからない...
         reply_bot.reply_result(user.access_token['screen_name'])
     except:
         return render(request, 'wait.html')
