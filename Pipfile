@@ -11,6 +11,7 @@ whitenoise = "*"
 django = "==2.0.8"
 tweepy = "*"
 social-auth-app-django = "*"
+django-toolbelt = "*"
 
 [dev-packages]
 
