@@ -1,8 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from social_django.models import UserSocialAuth
 
 from .twitbot import TweetBot
+
+
+def wait(request):
+    return render(request, 'wait.html')
 
 
 @login_required
@@ -13,7 +17,8 @@ def ordered(request):
     try:
         reply_bot = TweetBot()
         # TODO ここでスクリーンネームでなくユーザ名を表示する方法がわからない...
-        reply_bot.reply_result(user.access_token['screen_name'])
+        reply_bot.reply_result(user.access_token['name'])
     except:
-        return render(request, 'wait.html')
+        return redirect('/wait')
     return render(request, 'ordered.html', {'user': user})
+
