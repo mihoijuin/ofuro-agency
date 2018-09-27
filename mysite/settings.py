@@ -123,6 +123,7 @@ STATICFILES_DIRS = (
 )
 
 # Herokuデプロイ用
+db_from_env = dj_database_url.config()
 DATABASES['default'] = dj_database_url.config()
 
 # Herokuデプロイ用
