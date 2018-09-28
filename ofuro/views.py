@@ -1,3 +1,5 @@
+from concurrent.futures import ThreadPoolExecutor
+
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
@@ -14,12 +16,15 @@ def wait(request):
 @login_required
 def ordered(request):
     user = UserSocialAuth.objects.get(user_id=request.user.id)
-    # TODO テンプレートを読み込む動作を止めずに、Botメソッドを起動するのを10分後にしたい
-    # ? 並行処理かな？とは思っている
-    # ?認証したTwitterユーザのユーザ名の取得方法がわからん
+    # Twitter認証後、ordered.htmlを表示させつつ裏でBotを動かし10分後にリプライさせる
+    # TODO 例外発生した時にはすでにorderedに飛んでしまってるので例外処理を考え直す
     try:
-        reply_bot = TweetBot()
-        reply_bot.reply_result(user.access_token['screen_name'])
+        bot = TweetBot()
+        executor = ThreadPoolExecutor(max_workers=2)
+        executor.submit(
+            bot.reply_after_10min,
+            user.access_token['screen_name']
+            )
     except:
         return redirect('/wait')
     return render(request, 'ordered.html')
