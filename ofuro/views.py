@@ -29,16 +29,16 @@ def ordered(request):
 # TODO 画像を管理画面から投稿してどんどんページを作成できるようにするのが理想
 
 # //TODO login_requiredつける
-# @login_required
+@login_required
 def result1(request):
     return render(request, 'result1.html')
 
 
-# @login_required
+@login_required
 def result2(request):
     return render(request, 'result2.html')
 
 
-# @login_required
+@login_required
 def result3(request):
     return render(request, 'result3.html')
