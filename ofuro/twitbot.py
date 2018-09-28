@@ -43,8 +43,9 @@ class TweetBot():
             text=random.choice(phrases),
             url=random.choice(result_urls)
         )
+        image = './ofuro/static/images/ofuro-silhouette.png'
         # reply
-        api.update_status('@' + user_name + '\n\n' + phrase)
+        api.update_with_media(image, status='@' + user_name + '\n\n' + phrase)
 
     # 10分後に実行するスクリプト頑張って考えたのに...
     # これをTwitter認証後に呼び出されるビュー関数のなかで実行したら600秒間次の画面行くまでステイさせられるクソ仕様になったので一旦使用しない
