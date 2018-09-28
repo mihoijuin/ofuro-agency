@@ -3,6 +3,20 @@
 
 {% block title %}お風呂代行しました♡ - お風呂代理店{% endblock %}
 
+{% block ogp %}
+<meta property="og:title" content="お風呂代理店">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://ofuro-agency.herokuapp.com/static/images/ofuro-monkey.jpg">
+<meta property="og:site_name" content="お風呂がめんどくさいときにどうぞ">
+<meta property="og:description" content="お風呂めんどくさいときってありますよね？そんなとき、誰かが代わりに入ってくれれば...ここはそんなあなたの夢を叶える場所です">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ofuro_agency">
+<meta name="twitter:title" content="お風呂代理店">
+<meta name="twitter:description" content="お風呂めんどくさいときってありますよね？そんなとき、誰かが代わりに入ってくれれば...ここはそんなあなたの夢を叶える場所です">
+<meta name="twitter:image:src" content="https://ofuro-agency.herokuapp.com/static/images/ofuro-monkey.jpg">
+{% endblock %}
+
+
 {% block content %}
   <h2>＼お風呂♨️代わりに入りました♡／</h2>
   <img src="" alt="">
@@ -10,7 +24,7 @@
   <!-- TODO Bootstrapでrow, colを設定してPC画面では横並びにする-->
   <div>
     <p>またのご利用お待ちしております♡</p>
-    <img src="{% static 'images/ofuro-dog1.jpg' %}" alt="">
+    <img src="{% static 'images/ofuro-monkey.jpg' %}" alt="">
   </div>
 
   <a href=""><span class="fab fa-twitter">代行担当者をシェア</span></a>

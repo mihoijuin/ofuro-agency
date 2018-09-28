@@ -31,7 +31,7 @@ class TweetBot():
         result_url1 = ['https://ofuro-agency.herokuapp.com/result1']    # ネタ枠
         result_url2 = ['https://ofuro-agency.herokuapp.com/result2']    # ゲスト枠
         result_url3 = ['https://ofuro-agency.herokuapp.com/result3']    # 犬枠
-        result_urls = result_url1 * 20 + result_url2 * 5 + result_url3 * 2
+        result_urls = result_url1 * 10 + result_url2 * 2 + result_url3 * 5
         # 連投エラーの保険のためにフレーズを複数用意しランダムに選ぶ
         phrases = [
             'お風呂代わりに入ってきました♡',
@@ -43,8 +43,9 @@ class TweetBot():
             text=random.choice(phrases),
             url=random.choice(result_urls)
         )
+        image = './ofuro/static/images/ofuro-silhouette.png'
         # reply
-        api.update_status('@' + user_name + '\n\n' + phrase)
+        api.update_with_media(image, status='@' + user_name + '\n\n' + phrase)
 
     # 10分後に実行するスクリプト頑張って考えたのに...
     # これをTwitter認証後に呼び出されるビュー関数のなかで実行したら600秒間次の画面行くまでステイさせられるクソ仕様になったので一旦使用しない
