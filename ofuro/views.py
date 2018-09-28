@@ -22,3 +22,15 @@ def ordered(request):
         return redirect('/wait')
     return render(request, 'ordered.html', {'user': user})
 
+
+# TODO できたら各ビューで画像数種類をランダムに表示できるようにしたい...
+def result1(request):
+    return render(request, 'result1.html')
+
+
+def result2(request):
+    return render(request, 'result2.html')
+
+
+def result3(request):
+    return render(request, 'result3.html')
