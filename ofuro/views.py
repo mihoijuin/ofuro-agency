@@ -2,11 +2,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
 from social_django.models import UserSocialAuth
-from social_core.pipeline.user import get_username
 
 from .twitbot import TweetBot
 
 
+@login_required
 def wait(request):
     return render(request, 'wait.html')
 
@@ -27,13 +27,18 @@ def ordered(request):
 
 # TODO できたら各ビューで画像数種類をランダムに表示できるようにしたい...
 # TODO 画像を管理画面から投稿してどんどんページを作成できるようにするのが理想
+
+# //TODO login_requiredつける
+@login_required
 def result1(request):
     return render(request, 'result1.html')
 
 
+@login_required
 def result2(request):
     return render(request, 'result2.html')
 
 
+@login_required
 def result3(request):
     return render(request, 'result3.html')
