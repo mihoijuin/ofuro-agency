@@ -17,7 +17,6 @@ class TweetBot():
         self.AT = '953117369609568257-X9GsNc0kSIdGaUBaVtLqJyYWYoGNolE'
         self.ATS = 'Ssw5hIi7pfkeWKpJVjQrzN3ylsGnVQosiGX3STaRswiIM'
 
-    # // TODO phraseをランダムに変えるようにする（Twitterのエラー対処のため）
     def reply_result(self, twit_name):
         # TweepyでBot情報を読み込む
         # ? Bot情報を読み込むのは別メソッドを定義した方がいいかも？
@@ -25,7 +24,6 @@ class TweetBot():
         auth.set_access_token(self.AT, self.ATS)
         api = tweepy.API(auth)
         # reply用の情報
-        # // TODO phraseの内容は連投エラーの保険のためにランダムにした方が良さそう
         user_name = twit_name
         # resultページのURLをネタ枠が多くなるようにランダムに選ぶ
         result_url1 = ['https://ofuro-agency.herokuapp.com/result1']    # ネタ枠
@@ -47,10 +45,8 @@ class TweetBot():
         # reply
         api.update_with_media(image, status='@' + user_name + '\n\n' + phrase)
 
-    # 10分後に実行するスクリプト頑張って考えたのに...
-    # これをTwitter認証後に呼び出されるビュー関数のなかで実行したら600秒間次の画面行くまでステイさせられるクソ仕様になったので一旦使用しない
     def reply_after_10min(self, twit_name):
-        # 10分後にreply
+        '''10分後にreply'''
         scheduler = sched.scheduler(time.time, time.sleep)
         scheduler.enter(600, 1, self.reply_result, argument=[twit_name])
         scheduler.run()
