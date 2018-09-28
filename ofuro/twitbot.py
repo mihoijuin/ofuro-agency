@@ -1,5 +1,10 @@
-import tweepy
 import random
+import time
+from datetime import datetime, timedelta
+import sched
+
+
+import tweepy
 
 
 # ?本当はTweetBotで基本的なリプライやBot情報読み込みのメソッドを定義して、OfuroBotクラスで継承した上でカスタマイズするのが良いのだと思う
@@ -40,3 +45,11 @@ class TweetBot():
         )
         # reply
         api.update_status('@' + user_name + '\n\n' + phrase)
+
+    # 10分後に実行するスクリプト頑張って考えたのに...
+    # これをTwitter認証後に呼び出されるビュー関数のなかで実行したら600秒間次の画面行くまでステイさせられるクソ仕様になったので一旦使用しない
+    def reply_after_10min(self, twit_name):
+        # 10分後にreply
+        scheduler = sched.scheduler(time.time, time.sleep)
+        scheduler.enter(600, 1, self.reply_result, argument=[twit_name])
+        scheduler.run()
