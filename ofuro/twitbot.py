@@ -2,14 +2,15 @@ import tweepy
 import random
 
 
+# ?本当はTweetBotで基本的なリプライやBot情報読み込みのメソッドを定義して、OfuroBotクラスで継承した上でカスタマイズするのが良いのだと思う
+# ?だがまずは完成するのが先決なのでこのままやる
 class TweetBot():
-    # //d TODO __init__で書き換えられないか試す（クラス変数は外部から上書きできてしまってあんまよくないため）
+    # // TODO __init__で書き換えられないか試す（クラス変数は外部から上書きできてしまってあんまよくないため）
     def __init__(self):
         self.CK = 'cQJQwfbViw7F4wiKwnayEnNZG'
         self.CS = 'fPgufYNM41qTrXA7nFRgGZLxG8V0nqZewKSbtyyVtnPnBn21gW'
         self.AT = '953117369609568257-X9GsNc0kSIdGaUBaVtLqJyYWYoGNolE'
         self.ATS = 'Ssw5hIi7pfkeWKpJVjQrzN3ylsGnVQosiGX3STaRswiIM'
-
 
     # // TODO phraseをランダムに変えるようにする（Twitterのエラー対処のため）
     def reply_result(self, twit_name):
@@ -26,6 +27,7 @@ class TweetBot():
         result_url2 = ['https://ofuro-agency.herokuapp.com/result2']    # ゲスト枠
         result_url3 = ['https://ofuro-agency.herokuapp.com/result3']    # 犬枠
         result_urls = result_url1 * 20 + result_url2 * 5 + result_url3 * 2
+        # 連投エラーの保険のためにフレーズを複数用意しランダムに選ぶ
         phrases = [
             'お風呂代わりに入ってきました♡',
             'お待たせいたしました♡お風呂代わりに入ってきました♡',

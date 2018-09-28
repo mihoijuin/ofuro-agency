@@ -24,6 +24,7 @@ def ordered(request):
 
 
 # TODO できたら各ビューで画像数種類をランダムに表示できるようにしたい...
+# TODO 画像を管理画面から投稿してどんどんページを作成できるようにするのが理想
 def result1(request):
     return render(request, 'result1.html')
 
