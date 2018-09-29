@@ -1,6 +1,9 @@
 @charset 'UTF-8';
 
-
+/* 関数 */
+@function rem($px) {
+  @return ($px / 16px) * 1rem;
+}
 
 /* color */
 $basic_color: #A1E1EF;
