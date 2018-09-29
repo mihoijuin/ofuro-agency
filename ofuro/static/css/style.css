@@ -159,8 +159,6 @@ header {
   .top-wrapper h1 {
     font-size: 3rem;
     font-weight: 800; }
-  .top-wrapper p {
-    white-space: pre-wrap; }
 
 .descriptions h2 {
   text-align: center;
@@ -175,10 +173,13 @@ header {
   font-size: 1rem;
   white-space: pre-wrap; }
 
-/* common */
+/* common（複数回使うやつはここへ） */
 .heading {
   font-size: 2.5rem;
   font-weight: 800; }
+
+.white-space {
+  white-space: pre-wrap; }
 
 .logout-message {
   font-size: .7rem; }
@@ -189,10 +190,8 @@ header {
 .underline {
   background: linear-gradient(transparent 70%, #e8a2a2 0%); }
 
-/* ordered page */
-.ordered-message {
-  font-size: 2rem;
-  white-space: pre-wrap; }
+.message {
+  font-size: 1.8rem; }
 
 /* result page */
 .result-greeting p {
@@ -203,8 +202,7 @@ header {
   text-align: center;
   margin: auto 1rem;
   padding: 1.5rem;
-  vertical-align: top;
-  white-space: pre-wrap; }
+  vertical-align: top; }
   .result-greeting p:after {
     position: absolute;
     margin: 0;

@@ -4,12 +4,19 @@
 {% block title %}しばしお待ちください - お風呂代理店{% endblock %}
 
 {% block content %}
-  <h2>＼ただいま代行スタッフが全員入浴中です／</h2>
-  <img src="{% static 'images/dogeza.png' %}" alt="">
-  <p>
-    時間を置いてお試しいただくか<br>
-    頑張って自分で入浴いただけますと幸いです🐤
-  </p>
+  <div class="container text-center my-5 py-5">
+    <h2 class="heading">＼ただいま代行スタッフが全員入浴中です／</h2>
+    <img src="{% static 'images/dogeza.png' %}" alt="" class="my-3">
+    <p class="white-space message">時間を置いてお試しいただくか、
+頑張って自分で入浴いただけますと幸いです🐤
+    </p>
 
-  <a href="logout"><button type="button" >ログアウト</button></a>
+    <!-- ログインしてる場合だけ見せる -->
+    {% if user.is_authenticated %}
+    <div class="text-right">
+      <p class="logout-message mt-5 mb-2 pt-5">別のアカウントで試したいときは一旦ログアウトしてね</p>
+      <a href="logout" class="logout btn btn-secondary text-white">ログアウト</a>
+    </div>
+    {% endif %}
+  </div>
 {% endblock %}
