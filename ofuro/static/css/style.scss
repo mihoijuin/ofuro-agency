@@ -198,9 +198,7 @@ header {
     font-weight: 800;
   }
 
-  p {
-    white-space: pre-wrap;
-  }
+  p { white-space: pre-wrap; }
 }
 
 .descriptions {
@@ -223,6 +221,31 @@ header {
     white-space: pre-wrap;
   }
 }
+
+/* common */
+.heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.logout-message {
+  font-size: .7rem;
+}
+
+.logout {
+  font-size: .7rem;
+}
+
+.underline {
+  background: linear-gradient( transparent 70%, #e8a2a2 0% )
+}
+
+/* ordered page */
+.ordered-message {
+  font-size: 2rem;
+  white-space: pre-wrap;
+}
+
 
 /* footer */
 footer {

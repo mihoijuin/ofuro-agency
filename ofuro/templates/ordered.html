@@ -17,13 +17,16 @@
 {% endblock %}
 
 {% block content %}
-  <!-- TODO ここもできればユーザネームにしたい -->
-  <h2>＼ご注文承りました🐤♨️／</h2>
-  <!-- ? 画像は後ほど変えるかも -->
-  <img src="{% static 'images/ofuro-duck02.png' %}" alt="">
-  <p>
-    お風呂代行完了後に<br>
-    Twitterにてご連絡いたしますのでしばしお待ちください🐤
-  </p>
-  <a href="logout"><button type="button" >ログアウト</button></a>
+  <!-- TODO ここにできればユーザネーム入れたい -->
+  <div class="container text-center my-5 py-5">
+    <h2 class="heading">＼ご注文承りました🐤♨️／</h2>
+    <img src="{% static 'images/ofuro-duck02.png' %}" alt="" class="py-4">
+    <p class="ordered-message">お風呂代行完了後、
+  <span class="underline">Twitterにて</span>ご連絡いたしますので
+  しばしお待ちください🐤</p>
+    <div class="text-right">
+      <p class="logout-message mt-5 mb-2 pt-5">別のアカウントで試したいときは一旦ログアウトしてね</p>
+      <a href="logout" class="logout btn btn-secondary text-white">ログアウト</a>
+    </div>
+  </div>
 {% endblock %}
