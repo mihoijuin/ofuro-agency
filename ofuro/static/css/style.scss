@@ -1,5 +1,7 @@
 @charset 'UTF-8';
 
+// TODO できればヘッダーとフッターの共通部分はmixin化できると良い
+
 /* 関数 */
 @function rem($px) {
   @return ($px / 16px) * 1rem;
@@ -176,6 +178,45 @@ header {
     font-size: .8rem;
     font-weight: bold;
     padding: .8rem;
+
+    &:hover {
+      background-color: lighten($basic_color, 10%);
+    }
+  }
+}
+
+/* footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 2;
+  background-color: $basic_color;
+  padding: rem(20px) rem(36px);
+}
+
+.footer-logo {
+  h1 {
+    color: $black;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: .5rem;
+  }
+}
+
+.copyright {
+  color: $grey;
+  margin-top: .5rem;
+}
+
+.footer-contact {
+  a {
+    display: inline-block;
+    border: solid rem(1px) $grey;
+    border-radius: .2rem;
+    color: $grey;
+    font-size: .8rem;
+    font-weight: bold;
+    padding: .7rem;
 
     &:hover {
       background-color: lighten($basic_color, 10%);
