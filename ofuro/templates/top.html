@@ -18,48 +18,50 @@
 
 {% block content %}
   <div class="top">
-    <div class="top-wrapper">
-      <h1>お風呂代理店</h1>
-      <p>キャッチコピー的なのが1行</p>
+    <div class="top-wrapper container">
+      <h1>お風呂入るのめんどくさい</h1>
+      <p class="mt-4">そういうときってありますよね？
+そんな「お風呂めんどい」時は当店におまかせください！
+あなたのお風呂を代行します。</p>
     </div>
   </div>
 
   <!-- TODO このdivはBootstrapのcolを使用してPCやタブレット画面のときは横並びにする -->
-  <div class="descriptions">
-    <section class="description">
-      <!-- ? 画像は後ほど変えるかも -->
-      <img src="{% static 'images/ofuro-duck01.png' %}" alt="">
-      <h3>1.お風呂めんどくさい</h3>
-      <p>
-        なんか説明を3行くらい<br>
-        なんか説明を3行くらい<br>
-        なんか説明を3行くらい<br>
-      </p>
-    </section>
-    <section class="description">
-      <!-- ? 画像は後ほど変えるかも -->
-      <img src="{% static 'images/ofuro-duck01.png' %}" alt="">
-      <h3>2.ツイッター連携して申し込み</h3>
-      <p>
-        なんか説明を3行くらい<br>
-        なんか説明を3行くらい<br>
-        なんか説明を3行くらい<br>
-      </p>
-    </section>
-    <section class="description">
-      <!-- ? 画像は後ほど変えるかも -->
-      <img src="{% static 'images/ofuro-duck01.png' %}" alt="">
-      <h3>3.代わりにお風呂入ります</h3>
-      <p>
-        なんか説明を3行くらい<br>
-        なんか説明を3行くらい<br>
-        なんか説明を3行くらい<br>
-      </p>
-    </section>
-  </div>
+  <section class="descriptions container my-5">
+    <h2 class="pt-5 mb-3">ご利用方法</h2>
+    <div class="row my-5">
+      <section class="description col-sm">
+        <!-- ? 画像は後ほど変えるかも -->
+        <img src="{% static 'images/ofuro-mendoi.png' %}" alt="" width="300" height="300">
+        <h3>1.お風呂めんどくさい</h3>
+        <p>ああ、もうこんな時間だ。
+お風呂はいらなきゃと思えば思うほど、
+めんどくさくなるのはなんで？</p>
+      </section>
+      <section class="description col-sm">
+        <!-- ? 画像は後ほど変えるかも -->
+        <img src="{% static 'images/ofuro-order.jpg' %}" alt="" width="300" height="300">
+        <h3>2.お風呂代行を申請する</h3>
+        <p>そうだ、お風呂代理店を使おう！
+Twitterログインをしたら申し込み完了♨️
+※ 代行完了をお伝えするために
+お客様のツイッターIDを読み取ります。
+他の操作は一切いたしません。</p>
+      </section>
+      <section class="description col-sm">
+        <!-- ? 画像は後ほど変えるかも -->
+        <img src="{% static 'images/ofuro-duck01.png' %}" alt="" width="300" height="300">
+        <h3>3.代わりにお風呂入ります</h3>
+        <p>当店のスタッフがあなたの代わりに入浴♨️
+代行が完了いたしましたらツイッターにて
+連絡いたします。
+※ たまに従業員がさぼるかも...？</p>
+      </section>
+    </div>
+  </section>
 
-  <div>
-    <p>＼Twitter連携画面に移動します／</p>
-    <a href="{% url 'social:begin' 'twitter' %}"><span class="fab fa-twitter">お風呂めんどくさいので代わりに入ってもらう</span></a>
+  <div class="container text-center my-5 py-5">
+    <p class="my-2">＼Twitterログイン画面に移動します／</p>
+    <a href="{% url 'social:begin' 'twitter' %}" class="btn btn-primary text-white font-weight-bold p-3"><span class="fab fa-twitter"> お風呂めんどくさいので代わりに入ってもらう</span></a>
   </div>
 {% endblock %}

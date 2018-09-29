@@ -16,7 +16,7 @@ $grey: #7F7F7F;
 
 /* reset css */
 html {
-  color: #000;
+  color: $black;
   background: #fff;
 }
 
@@ -85,6 +85,7 @@ h3,
 h4,
 h5,
 h6 {
+  color: $black;
   font-size: 100%;
   font-weight: normal;
 }
@@ -119,7 +120,7 @@ select {
 }
 /*because legend doesn't inherit in IE */
 legend {
-  color: #000;
+  color: $black;
 }
 /* YUI CSS Detection Stamp */
 #yui3-css-stamp.cssreset {
@@ -138,12 +139,12 @@ body {
 }
 
 a {
-  color: black;
+  color: $black;
   text-decoration: none;
 
   &:hover {
     text-decoration: none;
-    color: black;
+    color: $black;
   }
 }
 
@@ -162,7 +163,6 @@ header {
 
 .header-logo {
   h1 {
-    color: $black;
     font-size: 2rem;
     font-weight: 600;
     margin-top: .3rem;
@@ -185,6 +185,45 @@ header {
   }
 }
 
+/* toppage */
+.top {
+  background-color: $yellow;
+}
+
+.top-wrapper {
+  padding: 6rem 0;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+  }
+
+  p {
+    white-space: pre-wrap;
+  }
+}
+
+.descriptions {
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+}
+
+.description {
+  h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 1.5rem 0;
+  }
+
+  p {
+    font-size: 1rem;
+    white-space: pre-wrap;
+  }
+}
+
 /* footer */
 footer {
   display: flex;
@@ -196,7 +235,6 @@ footer {
 
 .footer-logo {
   h1 {
-    color: $black;
     font-size: 1.5rem;
     font-weight: 600;
     margin-top: .5rem;

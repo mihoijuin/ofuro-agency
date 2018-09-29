@@ -3,7 +3,7 @@
 /* color */
 /* reset css */
 html {
-  color: #000;
+  color: #454141;
   background: #fff; }
 
 body,
@@ -68,6 +68,7 @@ h3,
 h4,
 h5,
 h6 {
+  color: #454141;
   font-size: 100%;
   font-weight: normal; }
 
@@ -102,7 +103,7 @@ select {
 
 /*because legend doesn't inherit in IE */
 legend {
-  color: #000; }
+  color: #454141; }
 
 /* YUI CSS Detection Stamp */
 #yui3-css-stamp.cssreset {
@@ -116,11 +117,11 @@ body {
   font-family: -apple-system, "Segoe UI", "Avenir", "Helvetica Neue", "Helvetica", "Arial", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif; }
 
 a {
-  color: black;
+  color: #454141;
   text-decoration: none; }
   a:hover {
     text-decoration: none;
-    color: black; }
+    color: #454141; }
 
 p {
   font-size: 1.2rem;
@@ -134,7 +135,6 @@ header {
   padding: 1.25rem 2.25rem; }
 
 .header-logo h1 {
-  color: #454141;
   font-size: 2rem;
   font-weight: 600;
   margin-top: .3rem; }
@@ -150,6 +150,31 @@ header {
   .header-share a:hover {
     background-color: #cdeff6; }
 
+/* toppage */
+.top {
+  background-color: #FFFBA0; }
+
+.top-wrapper {
+  padding: 6rem 0; }
+  .top-wrapper h1 {
+    font-size: 3rem;
+    font-weight: 800; }
+  .top-wrapper p {
+    white-space: pre-wrap; }
+
+.descriptions h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600; }
+
+.description h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 1.5rem 0; }
+.description p {
+  font-size: 1rem;
+  white-space: pre-wrap; }
+
 /* footer */
 footer {
   display: flex;
@@ -159,7 +184,6 @@ footer {
   padding: 1.25rem 2.25rem; }
 
 .footer-logo h1 {
-  color: #454141;
   font-size: 1.5rem;
   font-weight: 600;
   margin-top: .5rem; }
