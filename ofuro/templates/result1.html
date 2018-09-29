@@ -20,7 +20,7 @@
 {% block content %}
   <h2>＼お風呂♨️代わりに入りました♡／</h2>
   <img src="{% static 'images/ofuro-monkey.jpg' %}" alt="">
-  
+
   <!-- TODO Bootstrapでrow, colを設定してPC画面では横並びにする-->
   <div>
     <img src="" alt="">
@@ -29,5 +29,9 @@
 
   <a href=""><span class="fab fa-twitter">代行担当者をシェア</span></a>
 
-  <a href="logout"><button type="button" >ログアウト</button></a>
+  <!-- TODO ログインしてる場合だけ見せたい -->
+  <div class="text-right">
+    <p class="logout-message mt-5 mb-2 pt-5">別のアカウントで試したいときは一旦ログアウトしてね</p>
+    <a href="logout" class="logout btn btn-secondary text-white">ログアウト</a>
+  </div>
 {% endblock %}
