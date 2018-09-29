@@ -9,6 +9,7 @@
 $basic_color: #A1E1EF;
 $twit_color: #55ACEE;
 $yellow: #FFFBA0;
+$black: #454141;
 $grey: #7F7F7F;
 
 /* reset css */
@@ -123,7 +124,7 @@ legend {
   display: none;
 }
 
-
+/*  original css start */
 * {
   box-sizing: border-box;
 }
@@ -137,9 +138,42 @@ body {
 a {
   color: black;
   text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
 }
 
 p {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   line-height: 1.7;
+}
+
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: $basic_color;
+  padding: rem(20px) rem(36px);
+}
+
+.header-logo {
+  h1 {
+    color: $black;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: .3rem;
+  }
+}
+
+.header-share {
+  a {
+    display: inline-block;
+    border: solid rem(1px) $grey;
+    border-radius: .2rem;
+    color: $grey;
+    font-size: .8rem;
+    font-weight: bold;
+    padding: .8rem 1rem;
+  }
 }
