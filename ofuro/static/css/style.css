@@ -194,6 +194,33 @@ header {
   font-size: 2rem;
   white-space: pre-wrap; }
 
+/* result page */
+.result-greeting p {
+  display: inline-block;
+  background-color: #FFFBA0;
+  border-radius: .5rem;
+  font-weight: bold;
+  text-align: center;
+  margin: auto 1rem;
+  padding: 1.5rem;
+  vertical-align: top;
+  white-space: pre-wrap; }
+  .result-greeting p:after {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    transform: translateX(150%) translateY(calc(1.5rem - 0%));
+    width: 0;
+    content: "";
+    border-width: 0 1rem 1rem 0;
+    border-style: solid;
+    border-color: #FFFBA0 transparent; }
+
+.img-rounded {
+  border-radius: 50%;
+  width: 35%;
+  height: 100%; }
+
 /* footer */
 footer {
   display: flex;
