@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 740px) {
   p {
     font-size: 1rem;
     line-height: 1.5;
@@ -50,6 +50,17 @@
       font-size: 1.5rem;
       margin: .5rem 0;
     }
+  }
+
+  /* common（複数回使うやつはここへ） */
+  .heading {
+    font-size: 1.7rem;
+  }
+
+
+
+  .message {
+    font-size: 1.3rem;
   }
 
   /* footer */
