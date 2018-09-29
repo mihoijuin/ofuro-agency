@@ -1,6 +1,17 @@
 @charset 'UTF-8';
-@import "variables";
 
+/* 関数 */
+@function rem($px) {
+  @return ($px / 16px) * 1rem;
+}
+
+/* color */
+$basic_color: #A1E1EF;
+$twit_color: #55ACEE;
+$yellow: #FFFBA0;
+$grey: #7F7F7F;
+
+/* reset css */
 html {
   color: #000;
   background: #fff;
