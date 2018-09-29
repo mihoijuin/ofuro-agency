@@ -206,12 +206,13 @@ header {
     position: absolute;
     margin: 0;
     padding: 0;
-    transform: translateX(150%) translateY(calc(1.5rem - 0%));
+    transform: translateX(150%) translateY(calc(2.2rem - 0%));
     width: 0;
     content: "";
     border-width: 0 1rem 1rem 0;
     border-style: solid;
-    border-color: #FFFBA0 transparent; }
+    border-color: #FFFBA0 transparent;
+    max-width: calc(100% - 100px); }
 
 .img-rounded {
   border-radius: 50%;
