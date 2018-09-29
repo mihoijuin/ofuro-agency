@@ -246,10 +246,14 @@ header {
 }
 
 /* result page */
+.result {
+  background-color: $yellow;
+}
+
 .result-greeting {
   p {
     display: inline-block;
-    background-color: $yellow;
+    background-color: $basic_color;
     border-radius: .5rem;
     font-weight: bold;
     text-align: center;
@@ -261,12 +265,12 @@ header {
       position: absolute;
       margin: 0;
       padding: 0;
-      transform: translateX(150%) translateY(calc(2.2rem - 0%));
+      transform: translateX(145%) translateY(calc(1.9rem - 0%));
       width: 0;
       content: "";
       border-width: 0 1rem 1rem 0;
       border-style: solid;
-      border-color: $yellow transparent;
+      border-color: $basic_color transparent;
       max-width: calc(100% - 100px);
     }
   }
