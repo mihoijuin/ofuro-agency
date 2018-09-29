@@ -146,6 +146,8 @@ header {
   color: #7F7F7F;
   font-size: .8rem;
   font-weight: bold;
-  padding: .8rem 1rem; }
+  padding: .8rem; }
+  .header-share a:hover {
+    background-color: #cdeff6; }
 
 /*# sourceMappingURL=style.css.map */
