@@ -6,28 +6,34 @@
 {% block ogp %}
 <meta property="og:title" content="お風呂代理店">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://ofuro-agency.herokuapp.com/static/images/ofuro-dog2.jpg">
-<meta property="og:site_name" content="お風呂がめんどくさいときにどうぞ">
+<meta property="og:image" content="https://ofuro-agency.herokuapp.com/static/images/ofuro-monkey.jpg">
+<meta property="og:site_name" content="お風呂めんどいときはお風呂代理店へ">
 <meta property="og:description" content="お風呂めんどくさいときってありますよね？そんなとき、誰かが代わりに入ってくれれば...ここはそんなあなたの夢を叶える場所です">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@ofuro_agency">
-<meta name="twitter:title" content="お風呂代理店">
+<meta name="twitter:title" content="お風呂代わりに入りました🐕">
 <meta name="twitter:description" content="お風呂めんどくさいときってありますよね？そんなとき、誰かが代わりに入ってくれれば...ここはそんなあなたの夢を叶える場所です">
-<meta name="twitter:image:src" content="https://ofuro-agency.herokuapp.com/static/images/ofuro-dog2.jpg">
+<meta name="twitter:image:src" content="https://ofuro-agency.herokuapp.com/static/images/ofuro-monkey.jpg">
 {% endblock %}
 
 
 {% block content %}
-  <h2>＼お風呂♨️代わりに入りました♡／</h2>
-  <img src="{% static 'images/ofuro-dog2.jpg' %}" alt="">
-  
-  <!-- TODO Bootstrapでrow, colを設定してPC画面では横並びにする-->
-  <div>
-    ßß<img src="" alt="">
-    <p>またのご利用お待ちしております♡</p>
+  <div class="container text-center my-5 py-5">
+    <h2 class="heading">＼お風呂♨️代わりに入りました♡／</h2>
+    <img src="{% static 'images/ofuro-dog2.jpg' %}" alt="" class="result-img my-sm-3">
+
+    <div class="result-greeting my-5 py-sm-5">
+      <p>またのご利用お待ちしております♡</p>
+      <img src="{% static 'images/ofuro-dog2.jpg' %}" alt="" class="img-rounded">
+    </div>
+    <a href="https://twitter.com/share?url=https://ofuro-agency.herokuapp.com/result1&via=ofuro_agency&related=twitterapi%2Ctwitter&hashtags=お風呂めんどいときはお風呂代理店へ&text=お風呂代わりに入りました🐕" target="_blank" onclick="window.open(this.href, 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" class="btn btn-primary text-white font-weight-bold p-sm-3"><span class="fab fa-twitter"> 代行担当者をシェア</span></a>
+
+    <!-- ログインしてる場合だけ見せる -->
+    {% if user.is_authenticated %}
+    <div class="text-sm-right">
+      <p class="logout-message mt-5 mb-2 pt-5">別のアカウントで試したいときは一旦ログアウトしてね</p>
+      <a href="logout" class="logout btn btn-secondary text-white">ログアウト</a>
+    </div>
+    {% endif %}
   </div>
-
-  <a href=""><span class="fab fa-twitter">代行担当者をシェア</span></a>
-
-  <a href="logout"><button type="button" >ログアウト</button></a>
 {% endblock %}

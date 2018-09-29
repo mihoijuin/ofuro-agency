@@ -19,7 +19,8 @@
 {% block content %}
   <div class="top">
     <div class="top-wrapper container">
-      <h1>お風呂入るのめんどくさい</h1>
+      <h1>お風呂入るの
+めんどくさいな</h1>
       <p class="white-space mt-4">そういうときってありますよね？
 そんな「お風呂めんどい」時は当店におまかせください！
 あなたのお風呂を代行します。</p>
@@ -28,7 +29,7 @@
 
   <!-- TODO このdivはBootstrapのcolを使用してPCやタブレット画面のときは横並びにする -->
   <section class="descriptions container my-5">
-    <h2 class="pt-5 mb-3">ご利用方法</h2>
+    <h2 class="text-sm-center pt-5 mb-3">ご利用方法</h2>
     <div class="row my-5">
       <section class="description col-sm">
         <!-- ? 画像は後ほど変えるかも -->
@@ -52,7 +53,7 @@ Twitterログインをしたら申し込み完了♨️
         <!-- ? 画像は後ほど変えるかも -->
         <img src="{% static 'images/ofuro-duck01.png' %}" alt="" width="300" height="300">
         <h3>3.代わりにお風呂入ります</h3>
-        <p class="white-space">当店のスタッフがあなたの代わりに入浴♨️
+        <p class="white-space">当店スタッフがあなたの代わりに入浴♨️
 代行が完了いたしましたらツイッターにて
 連絡いたします。
 ※ たまに従業員がさぼるかも...？</p>
@@ -60,8 +61,10 @@ Twitterログインをしたら申し込み完了♨️
     </div>
   </section>
 
-  <div class="container text-center my-5 py-5">
+  <div class="container text-center my-sm-5 py-sm-5">
     <p class="my-2">＼Twitterログイン画面に移動します／</p>
-    <a href="{% url 'social:begin' 'twitter' %}" class="btn btn-primary text-white font-weight-bold p-3"><span class="fab fa-twitter"> お風呂めんどくさいので代わりに入ってもらう</span></a>
+    <a href="{% url 'social:begin' 'twitter' %}" class="btn btn-primary text-white font-weight-bold mb-5 p-sm-3"><span class="fab fa-twitter"> お風呂めんどい...代わりに入ってもらお</span></a>
+    <p></p>
+    <a href="https://twitter.com/share?url=https://ofuro-agency.herokuapp.com&via=ofuro_agency&related=twitterapi%2Ctwitter&hashtags=お風呂めんどいときはお風呂代理店へ&text=お風呂代理店" class="btn btn-primary my-5" target="_blank" onclick="window.open(this.href, 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;"><span class="fab fa-twitter"></span> シェアする</a>
   </div>
 {% endblock %}
