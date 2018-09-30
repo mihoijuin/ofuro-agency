@@ -136,7 +136,7 @@ header {
 
 .header-logo h1 {
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: bold;
   margin-top: .3rem; }
 
 .header-share a {
@@ -162,11 +162,11 @@ header {
 
 .descriptions h2 {
   font-size: 2.5rem;
-  font-weight: 600; }
+  font-weight: bold; }
 
 .description h3 {
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: bold;
   margin: 1.5rem 0; }
 .description p {
   font-size: 1rem;
@@ -225,7 +225,7 @@ header {
 /* terms */
 .terms h3 {
   font-size: 1.5rem;
-  font-weight: 600; }
+  font-weight: bold; }
 .terms li {
   margin-bottom: .5rem; }
 
@@ -239,7 +239,7 @@ footer {
 
 .footer-logo h1 {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: bold;
   margin-top: .5rem; }
 
 .copyright {

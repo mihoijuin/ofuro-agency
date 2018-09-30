@@ -29,7 +29,7 @@ class TweetBot():
         result_url1 = ['https://ofuro-agency.herokuapp.com/result1']    # ネタ枠
         result_url2 = ['https://ofuro-agency.herokuapp.com/result2']    # ゲスト枠
         result_url3 = ['https://ofuro-agency.herokuapp.com/result3']    # 犬枠
-        result_urls = result_url1 * 10 + result_url2 * 2 + result_url3 * 5
+        result_urls = result_url1 * 10 + result_url2 * 5 + result_url3 * 2
         # 連投エラーの保険のためにフレーズを複数用意しランダムに選ぶ
         phrases = [
             'お風呂代わりに入ってきました♡',
