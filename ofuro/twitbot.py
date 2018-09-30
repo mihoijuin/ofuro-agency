@@ -1,8 +1,7 @@
 import random
+import sched
 import time
 from datetime import datetime, timedelta
-import sched
-
 
 import tweepy
 
@@ -62,4 +61,3 @@ class TweetBot():
         phrase = '申し訳ございません🙇‍ただいま代行スタッフが全員入浴中です🙇‍\n時間を置いてお試しいただくか、頑張って自分で入浴いただけますと幸いです🐤\n'
         url = 'https://ofuro-agency.herokuapp.com/wait'
         api.update_status('@' + user_name + '\n\n' + phrase + '\n' + url)
-

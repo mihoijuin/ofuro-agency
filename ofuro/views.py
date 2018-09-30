@@ -1,8 +1,7 @@
 from concurrent.futures import ThreadPoolExecutor
 
-from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-
+from django.shortcuts import redirect, render
 from social_django.models import UserSocialAuth
 
 from .twitbot import TweetBot
