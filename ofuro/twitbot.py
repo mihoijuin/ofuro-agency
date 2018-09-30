@@ -17,12 +17,16 @@ class TweetBot():
         self.AT = '953117369609568257-X9GsNc0kSIdGaUBaVtLqJyYWYoGNolE'
         self.ATS = 'Ssw5hIi7pfkeWKpJVjQrzN3ylsGnVQosiGX3STaRswiIM'
 
-    def reply_result(self, twit_name):
-        # TweepyでBot情報を読み込む
-        # ? Bot情報を読み込むのは別メソッドを定義した方がいいかも？
+    def auth_tweepy(self):
         auth = tweepy.OAuthHandler(self.CK, self.CS)
         auth.set_access_token(self.AT, self.ATS)
         api = tweepy.API(auth)
+        return api
+
+    def reply_result(self, twit_name):
+        # TweepyでBot情報を読み込む
+        api = self.auth_tweepy()
+        # // ? Bot情報を読み込むのは別メソッドを定義した方がいいかも？
         # reply用の情報
         user_name = twit_name
         # resultページのURLをネタ枠が多くなるようにランダムに選ぶ
@@ -50,3 +54,12 @@ class TweetBot():
         scheduler = sched.scheduler(time.time, time.sleep)
         scheduler.enter(600, 1, self.reply_result, argument=[twit_name])
         scheduler.run()
+
+    def reply_error(self, twit_name):
+        # TweepyでBot情報を読み込む
+        api = self.auth_tweepy()
+        user_name = twit_name
+        phrase = '申し訳ございません🙇‍ただいま代行スタッフが全員入浴中です🙇‍\n時間を置いてお試しいただくか、頑張って自分で入浴いただけますと幸いです🐤\n'
+        url = 'https://ofuro-agency.herokuapp.com/wait'
+        api.update_status('@' + user_name + '\n\n' + phrase + '\n' + url)
+
