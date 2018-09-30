@@ -27,8 +27,8 @@ class TweetBot():
         user_name = twit_name
         # resultページのURLをネタ枠が多くなるようにランダムに選ぶ
         result_url1 = ['https://ofuro-agency.herokuapp.com/result1']    # ネタ枠
-        result_url2 = ['https://ofuro-agency.herokuapp.com/result2']    # ゲスト枠
-        result_url3 = ['https://ofuro-agency.herokuapp.com/result3']    # 犬枠
+        result_url2 = ['https://ofuro-agency.herokuapp.com/result2']    # 犬枠
+        result_url3 = ['https://ofuro-agency.herokuapp.com/result3']    # アヒル枠
         result_urls = result_url1 * 10 + result_url2 * 5 + result_url3 * 2
         # 連投エラーの保険のためにフレーズを複数用意しランダムに選ぶ
         phrases = [
@@ -37,7 +37,7 @@ class TweetBot():
             'おふろ代わりに入ってきました♡',
             'おまたせいたしました♡おふろ代わりに入ってきました♡'
             ]
-        phrase = '{text}\n{url}'.format(
+        phrase = '{text}\n#お風呂めんどいときはお風呂代理店へ\n\n結果を見る↓\n{url}'.format(
             text=random.choice(phrases),
             url=random.choice(result_urls)
         )
