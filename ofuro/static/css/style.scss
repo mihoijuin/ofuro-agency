@@ -282,6 +282,18 @@ header {
   height: 100%;
 }
 
+/* terms */
+.terms {
+ h3 {
+   font-size: 1.5rem;
+   font-weight: 600;
+ }
+
+ p,
+ ul {
+   margin-bottom: 1rem;
+ }
+}
 
 /* footer */
 footer {
