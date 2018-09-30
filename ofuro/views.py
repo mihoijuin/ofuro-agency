@@ -16,7 +16,7 @@ def wait(request):
 def ordered(request):
     user = UserSocialAuth.objects.get(user_id=request.user.id)
     # Twitter認証後、ordered.htmlを表示させつつ裏でBotを動かし10分後にリプライさせる
-    # TODO 例外発生した時にはすでにorderedに飛んでしまってるので例外処理を考え直す
+    # // TODO 例外発生した時にはすでにorderedに飛んでしまってるので例外処理を考え直す
     try:
         bot = TweetBot()
         executor = ThreadPoolExecutor(max_workers=2)
