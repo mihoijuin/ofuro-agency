@@ -226,9 +226,8 @@ header {
 .terms h3 {
   font-size: 1.5rem;
   font-weight: 600; }
-.terms p,
-.terms ul {
-  margin-bottom: 1rem; }
+.terms li {
+  margin-bottom: .5rem; }
 
 /* footer */
 footer {
