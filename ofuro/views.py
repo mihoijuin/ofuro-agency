@@ -26,6 +26,8 @@ def ordered(request):
             user.access_token['screen_name']
             )
     except:
+        bot = TweetBot()
+        bot.reply_error(user.access_token['screen_name'])
         return redirect('/wait')
     return render(request, 'ordered.html')
 
