@@ -44,3 +44,7 @@ def result2(request):
 
 def result3(request):
     return render(request, 'result3.html')
+
+
+def result4(request):
+    return render(request, 'result4.html')
