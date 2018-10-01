@@ -43,13 +43,13 @@
 
   /* result page */
   .result-img {
-    width: 100%; }
+    width: 80%; }
 
   .result-greeting p {
     margin: 2rem 0; }
 
   .img-rounded {
-    width: 50%; }
+    width: 70%; }
 
   /* footer */
   footer {
