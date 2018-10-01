@@ -15,5 +15,7 @@ urlpatterns = [
     path('result2', views.result2, name='result2'),
     path('result3', views.result3, name='result3'),
     path('result4', views.result4, name='result4'),
+    path('result5', views.result5, name='result5'),
+    path('result6', views.result6, name='result6'),
     path('wait', views.wait, name='wait'),    # 例外発生時にリダイレクト
 ]

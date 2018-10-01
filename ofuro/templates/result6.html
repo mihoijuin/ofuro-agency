@@ -4,16 +4,16 @@
 {% block title %}お風呂代行しました♡ - お風呂代理店{% endblock %}
 
 {% block ogp %}
-<meta property="og:title" content="お風呂代わりに入りました🐒">
+<meta property="og:title" content="お風呂代わりに入りました🛀">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://ofuro-agency.herokuapp.com/static/images/ofuro-monkey.jpg">
-<meta property="og:site_name" content="お風呂代わりに入りました🐒">
+<meta property="og:image" content="https://ofuro-agency.herokuapp.com/static/images/ofuro-oyaji.png">
+<meta property="og:site_name" content="お風呂代わりに入りました🛀">
 <meta property="og:description" content="お風呂がめんどくさいお客さまの代わりにお風呂に入りました。ええ湯でした。">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@ofuro_agency">
-<meta name="twitter:title" content="お風呂代わりに入りました🐒">
+<meta name="twitter:title" content="お風呂代わりに入りました🛀">
 <meta name="twitter:description" content="お風呂がめんどくさいお客さまの代わりにお風呂に入りました。ええ湯でした。">
-<meta name="twitter:image:src" content="https://ofuro-agency.herokuapp.com/static/images/ofuro-monkey.jpg">
+<meta name="twitter:image:src" content="https://ofuro-agency.herokuapp.com/static/images/ofuro-oyaji.png">
 {% endblock %}
 
 
@@ -22,17 +22,17 @@
     <div class="container text-center py-5">
       <p class="font-weight-bold pt-4">お客さまの代わりに</p>
       <h2 class="heading">＼お風呂♨️入りました♡／</h2>
-      <img src="{% static 'images/ofuro-monkey.jpg' %}" alt="" class="result-img my-sm-3 pb-3">
-      <p class="font-weight-bold">ええお湯でした...🐒♨️</p>
+      <img src="{% static 'images/ofuro-oyaji.png' %}" alt="" class="result-img my-sm-3 pb-3 px-4" height="300">
+      <p class="font-weight-bold">湯冷めした...🛀</p>
     </div>
   </div>
 
   <div class="container text-center my-5 py-5">
     <div class="result-greeting my-5 py-sm-5">
       <p>またのご利用お待ちしております♡</p>
-      <img src="{% static 'images/ofuro-monkey.jpg' %}" alt="" class="img-rounded">
+      <img src="{% static 'images/ofuro-oyaji.png' %}" alt="" class="img-rounded">
     </div>
-    <a href="https://twitter.com/share?url=https://ofuro-agency.herokuapp.com/result1&related=twitterapi%2Ctwitter&hashtags=お風呂めんどいときはお風呂代理店へ&text=お風呂代わりに入りました🐒" target="_blank" onclick="window.open(this.href, 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" class="btn btn-primary text-white font-weight-bold p-sm-3"><span class="fab fa-twitter"> 代行担当者をシェア</span></a>
+    <a href="https://twitter.com/share?url=https://ofuro-agency.herokuapp.com/result6&related=twitterapi%2Ctwitter&hashtags=お風呂めんどいときはお風呂代理店へ&text=お風呂代わりに入りました🛀" target="_blank" onclick="window.open(this.href, 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" class="btn btn-primary text-white font-weight-bold p-sm-3"><span class="fab fa-twitter"> 代行担当者をシェア</span></a>
 
     <!-- ログインしてる場合だけ見せる -->
     {% if user.is_authenticated %}

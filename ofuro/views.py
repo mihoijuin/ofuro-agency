@@ -48,3 +48,11 @@ def result3(request):
 
 def result4(request):
     return render(request, 'result4.html')
+
+
+def result5(request):
+    return render(request, 'result5.html')
+
+
+def result6(request):
+    return render(request, 'result6.html')
