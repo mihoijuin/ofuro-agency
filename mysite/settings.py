@@ -1,8 +1,5 @@
 import os
 
-# Herokuデプロイ用
-import dj_database_url
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -13,10 +10,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'o8^*57c0ad-_paas5z_p%u0i##xd9zwgrxo_5q9%l6#zpn9-u6'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 
 # Application definition
@@ -115,22 +110,10 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-# Herokuデプロイ用
+
 STATIC_URL = '/static/'
-STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATICFILES_DIRS = (
-   os.path.join(BASE_DIR, 'static'),
-)
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-# Herokuデプロイ用
-db_from_env = dj_database_url.config()
-DATABASES['default'] = dj_database_url.config()
-
-# Herokuデプロイ用
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Twitter認証用
 AUTHENTICATION_BACKENDS = [
@@ -144,8 +127,13 @@ SOCIAL_AUTH_TWITTER_SECRET = 'noTTwUyNXxHYFzKMm4JJk4D7HxsHQXWOwZmDqjNA6sz4ASuocT
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/ordered'    # リダイレクトURL
 
 
-# Herokuデプロイ用
+DEBUG = False
+
 try:
     from .local_settings import *
 except ImportError:
     pass
+
+if not DEBUG:
+    import django_heroku
+    django_heroku.settings(locals())
