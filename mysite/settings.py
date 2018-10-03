@@ -1,7 +1,5 @@
 import os
 
-# Herokuデプロイ用
-import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -115,22 +113,9 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-# Herokuデプロイ用
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATICFILES_DIRS = (
-   os.path.join(BASE_DIR, 'static'),
-)
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-# Herokuデプロイ用
-db_from_env = dj_database_url.config()
-DATABASES['default'] = dj_database_url.config()
-
-# Herokuデプロイ用
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Twitter認証用
 AUTHENTICATION_BACKENDS = [
@@ -149,3 +134,7 @@ try:
     from .local_settings import *
 except ImportError:
     pass
+
+if not DEBUG:
+    import django_heroku
+    django_heroku.settings(locals())
