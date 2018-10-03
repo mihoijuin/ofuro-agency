@@ -130,7 +130,7 @@ STATICFILES_DIRS = (
 # Heroku
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Twitter認証用
 AUTHENTICATION_BACKENDS = [
@@ -146,5 +146,11 @@ SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/ordered'    # リダイレクトURL
 
 # Heroku
 DEBUG = False
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
 
 django_heroku.settings(locals())
