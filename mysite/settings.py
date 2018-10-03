@@ -144,7 +144,7 @@ SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/ordered'    # リダイレクトURL
 
 
 # Heroku
-DEBUG = False
+DEBUG = True
 
 try:
     from .local_settings import *
