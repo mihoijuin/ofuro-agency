@@ -16,7 +16,7 @@ SECRET_KEY = 'o8^*57c0ad-_paas5z_p%u0i##xd9zwgrxo_5q9%l6#zpn9-u6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://ofuro-agency.herokuapp.com/', 'http://127.0.0.1:8000/']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
