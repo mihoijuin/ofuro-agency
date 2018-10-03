@@ -6,6 +6,9 @@ import time
 import tweepy
 
 
+from .crypturl import AESCipher
+
+
 # ?本当はTweetBotで基本的なリプライやBot情報読み込みのメソッドを定義して、OfuroBotクラスで継承した上でカスタマイズするのが良いのだと思う
 # ?だがまずは完成するのが先決なのでこのままやる
 class TweetBot():
@@ -16,6 +19,12 @@ class TweetBot():
         self.AT = '953117369609568257-X9GsNc0kSIdGaUBaVtLqJyYWYoGNolE'
         self.ATS = 'Ssw5hIi7pfkeWKpJVjQrzN3ylsGnVQosiGX3STaRswiIM'
 
+    def encrypt_path(self, path):    # urls.pyでも使い回せるようにURL全部でなくパスを暗号化
+        key = 'poriporiporiofuroporipori'
+        aes = AESCipher(key)
+        enc_path = aes.encrypt(aes.key, path)
+        return enc_path
+
     def auth_tweepy(self):
         auth = tweepy.OAuthHandler(self.CK, self.CS)
         auth.set_access_token(self.AT, self.ATS)
@@ -23,20 +32,16 @@ class TweetBot():
         return api
 
     def reply_result(self, twit_name):
-        # TweepyでBot情報を読み込む
-        api = self.auth_tweepy()
-        # // ? Bot情報を読み込むのは別メソッドを定義した方がいいかも？
-        # reply用の情報
-        user_name = twit_name
+        # URLを暗号化
+        root_url = 'https://ofuro-agency.herokuapp.com/'
+        result_monkey = [root_url + self.encrypt_path('result-monkey')]
+        result_dog = [root_url + self.encrypt_path('result-dog')]
+        result_duck = [root_url + self.encrypt_path('result-duck')]
+        result_nananana = [root_url + self.encrypt_path('result-nananana')]
+        result_money = [root_url + self.encrypt_path('result-money')]
+        result_oyaji = [root_url + self.encrypt_path('result-oyaji')]
         # resultページのURLをネタ枠が多くなるようにランダムに選ぶ
-        # TODO 後ほど暗号化したらわかりやすいURLにしよう（result-monkeyなど
-        result_url1 = ['https://ofuro-agency.herokuapp.com/result1']    # サル
-        result_url2 = ['https://ofuro-agency.herokuapp.com/result2']    # 犬
-        result_url3 = ['https://ofuro-agency.herokuapp.com/result3']    # アヒル
-        result_url4 = ['https://ofuro-agency.herokuapp.com/result4']    # ナナナナさん
-        result_url5 = ['https://ofuro-agency.herokuapp.com/result5']    # 札束
-        result_url6 = ['https://ofuro-agency.herokuapp.com/result6']    # おっさん
-        result_urls = result_url1 * 5 + result_url2 * 5 + result_url3 * 2 + result_url4 * 2 + result_url5 * 5 + result_url6 * 10
+        result_urls = result_monkey * 5 + result_dog * 5 + result_duck * 2 + result_nananana * 2 + result_money * 5 + result_oyaji * 10
         # 連投エラーの保険のためにフレーズを複数用意しランダムに選ぶ
         phrases = [
             'お風呂代わりに入ってきました♡',
@@ -50,7 +55,8 @@ class TweetBot():
         )
         image = './ofuro/static/images/ofuro-silhouette.png'
         # reply
-        api.update_with_media(image, status='@' + user_name + '\n\n' + phrase)
+        api = self.auth_tweepy()    # TweepyでBotの情報を読み込む
+        api.update_with_media(image, status='@' + twit_name + '\n\n' + phrase)
 
     def reply_after_10min(self, twit_name):
         '''10分後にreply'''
@@ -61,7 +67,6 @@ class TweetBot():
     def reply_error(self, twit_name):
         # TweepyでBot情報を読み込む
         api = self.auth_tweepy()
-        user_name = twit_name
         phrase = '申し訳ございません🙇‍ただいま代行スタッフが全員入浴中です🙇‍\n時間を置いてお試しいただくか、頑張って自分で入浴いただけますと幸いです🐤\n'
         url = 'https://ofuro-agency.herokuapp.com/wait'
-        api.update_status('@' + user_name + '\n\n' + phrase + '\n' + url)
+        api.update_status('@' + twit_name + '\n\n' + phrase + '\n' + url)

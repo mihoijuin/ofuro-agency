@@ -34,25 +34,25 @@ def ordered(request):
 # TODO できたら各ビューで画像数種類をランダムに表示できるようにしたい...
 # TODO 画像を管理画面から投稿してどんどんページを作成できるようにするのが理想
 
-def result1(request):
-    return render(request, 'result1.html')
+def result_monkey(request):
+    return render(request, 'result_monkey.html')
 
 
-def result2(request):
-    return render(request, 'result2.html')
+def result_dog(request):
+    return render(request, 'result_dog.html')
 
 
-def result3(request):
-    return render(request, 'result3.html')
+def result_duck(request):
+    return render(request, 'result_duck.html')
 
 
-def result4(request):
-    return render(request, 'result4.html')
+def result_nananana(request):
+    return render(request, 'result_nananana.html')
 
 
-def result5(request):
-    return render(request, 'result5.html')
+def result_money(request):
+    return render(request, 'result_money.html')
 
 
-def result6(request):
-    return render(request, 'result6.html')
+def result_oyaji(request):
+    return render(request, 'result_oyaji.html')
