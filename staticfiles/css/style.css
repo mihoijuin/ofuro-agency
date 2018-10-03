@@ -1,0 +1,259 @@
+@charset "UTF-8";
+/* 関数 */
+/* color */
+/* reset css */
+html {
+  color: #454141;
+  background: #fff; }
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+fieldset,
+img {
+  border: 0; }
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal; }
+
+ol,
+ul {
+  list-style: none; }
+
+caption,
+th {
+  text-align: left; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #454141;
+  font-size: 100%;
+  font-weight: normal; }
+
+q:before,
+q:after {
+  content: ""; }
+
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal; }
+
+/* to preserve line-height and selector appearance */
+sup {
+  vertical-align: text-top; }
+
+sub {
+  vertical-align: text-bottom; }
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit; }
+
+/*to enable resizing for IE*/
+input,
+textarea,
+select {
+  *font-size: 100%; }
+
+/*because legend doesn't inherit in IE */
+legend {
+  color: #454141; }
+
+/* YUI CSS Detection Stamp */
+#yui3-css-stamp.cssreset {
+  display: none; }
+
+/*  original css start */
+* {
+  box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, "Segoe UI", "Avenir", "Helvetica Neue", "Helvetica", "Arial", "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif; }
+
+a {
+  color: #454141;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: none;
+    color: #454141; }
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.7; }
+
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #A1E1EF;
+  padding: 1.25rem 2.25rem; }
+
+.header-logo h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: .3rem; }
+
+.header-share a {
+  display: inline-block;
+  border: solid 0.0625rem #7F7F7F;
+  border-radius: .2rem;
+  color: #7F7F7F;
+  font-size: .8rem;
+  font-weight: bold;
+  padding: .8rem; }
+  .header-share a:hover {
+    background-color: #cdeff6; }
+
+/* toppage */
+.top {
+  background-color: #FFFBA0; }
+
+.top-wrapper {
+  padding: 6rem 0; }
+  .top-wrapper h1 {
+    font-size: 3rem;
+    font-weight: 800; }
+
+.descriptions h2 {
+  font-size: 2.5rem;
+  font-weight: bold; }
+
+.description h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 1.5rem 0; }
+.description p {
+  font-size: 1rem;
+  white-space: pre-wrap; }
+
+/* common（複数回使うやつはここへ） */
+.heading {
+  font-size: 2.5rem;
+  font-weight: 800; }
+
+.white-space {
+  white-space: pre-wrap; }
+
+.logout-message {
+  font-size: .7rem; }
+
+.logout {
+  font-size: .7rem; }
+
+.underline {
+  background: linear-gradient(transparent 70%, #e8a2a2 0%); }
+
+.message {
+  font-size: 1.8rem; }
+
+/* result page */
+.result {
+  background-color: #FFFBA0; }
+
+.result-greeting p {
+  display: inline-block;
+  background-color: #A1E1EF;
+  border-radius: .5rem;
+  font-weight: bold;
+  text-align: center;
+  margin: auto 1rem;
+  padding: 1.5rem;
+  vertical-align: top; }
+  .result-greeting p:after {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    transform: translateX(145%) translateY(calc(1.9rem - 0%));
+    width: 0;
+    content: "";
+    border-width: 0 1rem 1rem 0;
+    border-style: solid;
+    border-color: #A1E1EF transparent;
+    max-width: calc(100% - 100px); }
+
+.img-rounded {
+  border-radius: 50%;
+  width: 35%; }
+
+/* terms */
+.terms h3 {
+  font-size: 1.5rem;
+  font-weight: bold; }
+.terms li {
+  margin-bottom: .5rem; }
+
+/* footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 2;
+  background-color: #A1E1EF;
+  padding: 1.25rem 2.25rem; }
+
+.footer-logo h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: .5rem; }
+
+.copyright {
+  color: #7F7F7F;
+  margin-top: .5rem; }
+
+.footer-contact a {
+  display: inline-block;
+  border: solid 0.0625rem #7F7F7F;
+  border-radius: .2rem;
+  color: #7F7F7F;
+  font-size: .8rem;
+  font-weight: bold;
+  padding: .7rem; }
+  .footer-contact a:hover {
+    background-color: #cdeff6; }
+
+/*# sourceMappingURL=style.css.map */
