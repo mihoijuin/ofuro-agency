@@ -147,10 +147,4 @@ SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/ordered'    # リダイレクトURL
 # Heroku
 DEBUG = False
 
-try:
-    from .local_settings import *
-except ImportError:
-    pass
-
-
 django_heroku.settings(locals())
