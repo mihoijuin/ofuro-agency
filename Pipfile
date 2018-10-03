@@ -13,6 +13,7 @@ tweepy = "*"
 social-auth-app-django = "*"
 django-toolbelt = "*"
 pycrypto = "*"
+django-heroku = "*"
 
 [dev-packages]
 
