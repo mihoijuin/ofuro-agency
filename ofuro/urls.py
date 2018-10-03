@@ -8,6 +8,7 @@ app_name = 'ofuro'
 key = 'poriporiporiofuroporipori'
 aes = AESCipher(key)
 
+# 結局うけつけるのはpathで指定した内容なので複合化意味なくね？ってなった
 urlpatterns = [
     path('', login, {'template_name': 'top.html', }, name='top'),
     # めんどいのでログアウト後の画面はトップにしちゃった
