@@ -38,7 +38,7 @@ class TweetBot():
         result_dog = [root_url + self.encrypt_path('result-dog')]
         result_duck = [root_url + self.encrypt_path('result-duck')]
         result_nananana = [root_url + self.encrypt_path('result-nananana')]
-        result_money = [root_url + self.encrypt_path('result-money')]
+        result_money = [root_url + 'LofG1lC3uIf7XnD6awGDw==']
         result_oyaji = [root_url + self.encrypt_path('result-oyaji')]
         # resultページのURLをネタ枠が多くなるようにランダムに選ぶ
         result_urls = result_monkey * 1 + result_dog * 1 + result_duck * 1 + result_nananana * 1 + result_money * 5 + result_oyaji * 5
