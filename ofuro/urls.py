@@ -15,7 +15,7 @@ urlpatterns = [
     # ログアウトしたらアラートで「ログアウトしました」って出たら理想
     path('logout', logout, {'template_name': 'top.html', }, name='top'),
     path('ordered', views.ordered, name='ordered'),    # Twitter認証後リダイレクト
-    path(aes.encrypt(aes.key,'result-monkey'), views.result_monkey, name='result_monkey'),
+    path('LofG1lC3uIf7XnD6awGDw==', views.result_monkey, name='result_monkey'),
     path(aes.encrypt(aes.key,'result-dog'), views.result_dog, name='result_dog'),
     path(aes.encrypt(aes.key,'result-duck'), views.result_duck, name='result_duck'),
     path(aes.encrypt(aes.key,'result-nananana'), views.result_nananana, name='result_nananana'),
