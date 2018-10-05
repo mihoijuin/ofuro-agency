@@ -41,7 +41,7 @@ class TweetBot():
         result_money = [root_url + self.encrypt_path('result-money')]
         result_oyaji = [root_url + self.encrypt_path('result-oyaji')]
         # resultページのURLをネタ枠が多くなるようにランダムに選ぶ
-        result_urls = result_monkey * 5 + result_dog * 5 + result_duck * 2 + result_nananana * 2 + result_money * 5 + result_oyaji * 10
+        result_urls = result_monkey * 1 + result_dog * 1 + result_duck * 1 + result_nananana * 1 + result_money * 5 + result_oyaji * 5
         # 連投エラーの保険のためにフレーズを複数用意しランダムに選ぶ
         phrases = [
             'お風呂代わりに入ってきました♨️ええお湯でした♨️',
