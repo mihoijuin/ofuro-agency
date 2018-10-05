@@ -1,4 +1,5 @@
 from concurrent.futures import ThreadPoolExecutor
+import time
 
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
@@ -19,11 +20,11 @@ def top(request):
     # URLを暗号化
     try:
         root_url = 'https://ofuro-agency.herokuapp.com/'
-        result_monkey = [root_url + encrypt_path('result-monkey')]
+        result_monkey = [root_url + 'LofG1lC3uIf7XnD6awGDw==']
         result_dog = [root_url + encrypt_path('result-dog')]
         result_duck = [root_url + encrypt_path('result-duck')]
         result_nananana = [root_url + encrypt_path('result-nananana')]
-        result_money = [root_url + 'LofG1lC3uIf7XnD6awGDw==']
+        result_money = [root_url + encrypt_path('result-money')]
         result_oyaji = [root_url + encrypt_path('result-oyaji')]
         # resultページのURLをネタ枠が多くなるようにランダムに選ぶ
         result_urls = result_monkey * 2 + result_dog * 1 + result_duck * 1 + result_nananana * 1 + result_money * 5 + result_oyaji * 5
@@ -40,26 +41,32 @@ def wait(request):
 # TODO 画像を管理画面から投稿してどんどんページを作成できるようにするのが理想
 
 def result_monkey(request):
+    time.sleep(3)
     return render(request, 'result_monkey.html')
 
 
 def result_dog(request):
+    time.sleep(3)
     return render(request, 'result_dog.html')
 
 
 def result_duck(request):
+    time.sleep(3)
     return render(request, 'result_duck.html')
 
 
 def result_nananana(request):
+    time.sleep(3)
     return render(request, 'result_nananana.html')
 
 
 def result_money(request):
+    time.sleep(3)
     return render(request, 'result_money.html')
 
 
 def result_oyaji(request):
+    time.sleep(3)
     return render(request, 'result_oyaji.html')
 
 
