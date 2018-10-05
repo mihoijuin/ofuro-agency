@@ -29,7 +29,7 @@ def top(request):
         result_urls = result_monkey * 2 + result_dog * 1 + result_duck * 1 + result_nananana * 1 + result_money * 5 + result_oyaji * 5
         return render(request, 'top.html', {'result_urls': result_urls})
     except:
-         return redirect('/wait')
+        return redirect('/wait')
 
 
 def wait(request):
