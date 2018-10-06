@@ -39,7 +39,7 @@ def wait(request):
 
 # TODO できたら各ビューで画像数種類をランダムに表示できるようにしたい...
 # TODO 画像を管理画面から投稿してどんどんページを作成できるようにするのが理想
-
+# resultへすんなり遷移させたくなかったのでsleep挟む
 def result_monkey(request):
     time.sleep(3)
     return render(request, 'result_monkey.html')
