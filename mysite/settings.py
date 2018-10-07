@@ -1,7 +1,11 @@
 import os
+from socket import gethostname
 
 import django_heroku
 import dj_database_url
+
+# HOSTNAME
+HOSTNAME = gethostname()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -11,9 +15,12 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'o8^*57c0ad-_paas5z_p%u0i##xd9zwgrxo_5q9%l6#zpn9-u6'
-
+# シークレットキー読み込み＠開発環境
+if 'local' in HOSTNAME:
+    import local_settings
+    SECRET_KEY = local_settings.SECRET_KEY
+else:
+    SECRET_KEY = os.environ['SECRET_KEY']
 
 ALLOWED_HOSTS = ['*']
 
@@ -145,10 +152,29 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
-# Twitter認証用
-SOCIAL_AUTH_TWITTER_KEY = '9Z5NEN0A2RPmAC9l2N6lRlgAV'   # Consumer Key
-SOCIAL_AUTH_TWITTER_SECRET = 'noTTwUyNXxHYFzKMm4JJk4D7HxsHQXWOwZmDqjNA6sz4ASuocT'  # Consumer Secret
-SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/ordered'    # リダイレクトURL
+
+if 'local' in HOSTNAME:
+    import local_settings
+    # Twitter認証用キー
+    SOCIAL_AUTH_TWITTER_KEY = local_settings.SOCIAL_AUTH_TWITTER_KEY   # Consumer Key
+    SOCIAL_AUTH_TWITTER_SECRET = local_settings.SOCIAL_AUTH_TWITTER_SECRET  # Consumer Secret
+    SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/ordered'    # リダイレクトURL
+    # BOT用キー
+    CK = local_settings.CK
+    CS = local_settings.CS
+    AT = local_settings.AT
+    ATS = local_settings.ATS
+else:
+    # Twitter認証キー
+    SOCIAL_AUTH_TWITTER_KEY = os.environ['SOCIAL_AUTH_TWITTER_KEY']
+    SOCIAL_AUTH_TWITTER_SECRET = os.environ['SOCIAL_AUTH_TWITTER_SECRET']
+    SOCIAL_AUTH_LOGIN_REDIRECT_URL = os.environ['SOCIAL_AUTH_LOGIN_REDIRECT_URL']
+    # BOT用のキー
+    CK = os.environ['CK']
+    CS = os.environ['CS']
+    AT = os.environ['AT']
+    ATS = os.environ['ATS']
+
 
 
 # Heroku
