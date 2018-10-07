@@ -17,8 +17,8 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # シークレットキー読み込み＠開発環境
 if 'local' in HOSTNAME:
-    import local_settings
-    SECRET_KEY = local_settings.SECRET_KEY
+    from .local_settings import *
+    SECRET_KEY = LOCAL_SECRET_KEY
 else:
     SECRET_KEY = os.environ['SECRET_KEY']
 
@@ -154,16 +154,15 @@ AUTHENTICATION_BACKENDS = [
 
 
 if 'local' in HOSTNAME:
-    import local_settings
+    from .local_settings import *
     # Twitter認証用キー
-    SOCIAL_AUTH_TWITTER_KEY = local_settings.SOCIAL_AUTH_TWITTER_KEY   # Consumer Key
-    SOCIAL_AUTH_TWITTER_SECRET = local_settings.SOCIAL_AUTH_TWITTER_SECRET  # Consumer Secret
-    SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/ordered'    # リダイレクトURL
+    SOCIAL_AUTH_TWITTER_KEY = LOCAL_SOCIAL_AUTH_TWITTER_KEY
+    SOCIAL_AUTH_TWITTER_SECRET = LOCAL_SOCIAL_AUTH_TWITTER_SECRET
     # BOT用キー
-    CK = local_settings.CK
-    CS = local_settings.CS
-    AT = local_settings.AT
-    ATS = local_settings.ATS
+    CK = LOCAL_CK
+    CS = LOCAL_CS
+    AT = LOCAL_AT
+    ATS = LOCAL_ATS
 else:
     # Twitter認証キー
     SOCIAL_AUTH_TWITTER_KEY = os.environ['SOCIAL_AUTH_TWITTER_KEY']
@@ -175,7 +174,8 @@ else:
     AT = os.environ['AT']
     ATS = os.environ['ATS']
 
-
+# Twitter認証後リダイレクトURL
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/ordered'
 
 # Heroku
 DEBUG = False

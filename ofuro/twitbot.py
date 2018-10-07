@@ -5,7 +5,7 @@ import time
 
 import tweepy
 
-import settings
+from django.conf import settings
 from .crypturl import AESCipher
 
 
