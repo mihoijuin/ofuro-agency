@@ -5,7 +5,7 @@ import time
 
 import tweepy
 
-
+import settings
 from .crypturl import AESCipher
 
 
@@ -14,10 +14,11 @@ from .crypturl import AESCipher
 class TweetBot():
     # // TODO __init__で書き換えられないか試す（クラス変数は外部から上書きできてしまってあんまよくないため）
     def __init__(self):
-        self.CK = 'cQJQwfbViw7F4wiKwnayEnNZG'
-        self.CS = 'fPgufYNM41qTrXA7nFRgGZLxG8V0nqZewKSbtyyVtnPnBn21gW'
-        self.AT = '953117369609568257-X9GsNc0kSIdGaUBaVtLqJyYWYoGNolE'
-        self.ATS = 'Ssw5hIi7pfkeWKpJVjQrzN3ylsGnVQosiGX3STaRswiIM'
+        # キー読み込み@開発環境
+        self.CK = settings.CK
+        self.CS = settings.CS
+        self.AT = settings.AT
+        self.ATS = settings.ATS
 
     def encrypt_path(self, path):    # urls.pyでも使い回せるようにURL全部でなくパスを暗号化
         key = 'poriporiporiofuroporipori'
