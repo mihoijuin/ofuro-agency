@@ -167,7 +167,6 @@ else:
     # Twitter認証キー
     SOCIAL_AUTH_TWITTER_KEY = os.environ['SOCIAL_AUTH_TWITTER_KEY']
     SOCIAL_AUTH_TWITTER_SECRET = os.environ['SOCIAL_AUTH_TWITTER_SECRET']
-    SOCIAL_AUTH_LOGIN_REDIRECT_URL = os.environ['SOCIAL_AUTH_LOGIN_REDIRECT_URL']
     # BOT用のキー
     CK = os.environ['CK']
     CS = os.environ['CS']
