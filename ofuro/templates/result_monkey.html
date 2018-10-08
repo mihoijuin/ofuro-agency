@@ -38,12 +38,5 @@
 
     <p class="my-2">＼トップページに飛ぶよ／</p>
     <a href="/" class="btn btn-primary text-white p-sm-3">もう一度お風呂代行してもらう</a>
-    <!-- ログインしてる場合だけ見せる -->
-    {% if user.is_authenticated %}
-    <div class="text-sm-right">
-      <p class="logout-message mt-5 mb-2 pt-5">別のアカウントで試したいときは一旦ログアウトしてね</p>
-      <a href="logout" class="logout btn btn-secondary text-white">ログアウト</a>
-    </div>
-    {% endif %}
   </div>
 {% endblock %}
