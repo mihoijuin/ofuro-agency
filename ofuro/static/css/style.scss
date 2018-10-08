@@ -250,6 +250,10 @@ header {
   background-color: $yellow;
 }
 
+.result-img {
+  max-height: 500px;
+}
+
 .result-greeting {
   p {
     display: inline-block;

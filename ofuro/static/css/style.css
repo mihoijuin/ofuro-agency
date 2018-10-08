@@ -196,6 +196,9 @@ header {
 .result {
   background-color: #FFFBA0; }
 
+.result-img {
+  max-height: 500px; }
+
 .result-greeting p {
   display: inline-block;
   background-color: #A1E1EF;
