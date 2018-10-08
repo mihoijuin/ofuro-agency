@@ -26,8 +26,9 @@ def top(request):
         result_nananana = [root_url + encrypt_path('result-nananana')]
         result_money = [root_url + encrypt_path('result-money')]
         result_oyaji = [root_url + encrypt_path('result-oyaji')]
+        result_seabiscuit = [root_url + encrypt_path('result-seabiscuit')]
         # resultページのURLをネタ枠が多くなるようにランダムに選ぶ
-        result_urls = result_monkey * 2 + result_dog * 1 + result_duck * 1 + result_nananana * 1 + result_money * 5 + result_oyaji * 5
+        result_urls = result_monkey * 2 + result_dog * 1 + result_duck * 1 + result_nananana * 1 + result_money * 5 + result_oyaji * 5 + result_seabiscuit * 1
         return render(request, 'top.html', {'result_urls': result_urls})
     except:
         return redirect('/wait')
@@ -41,34 +42,38 @@ def wait(request):
 # TODO 画像を管理画面から投稿してどんどんページを作成できるようにするのが理想
 # resultへすんなり遷移させたくなかったのでsleep挟む
 def result_monkey(request):
-    time.sleep(3)
+    time.sleep(2)
     return render(request, 'result_monkey.html')
 
 
 def result_dog(request):
-    time.sleep(3)
+    time.sleep(2)
     return render(request, 'result_dog.html')
 
 
 def result_duck(request):
-    time.sleep(3)
+    time.sleep(2)
     return render(request, 'result_duck.html')
 
 
 def result_nananana(request):
-    time.sleep(3)
+    time.sleep(2)
     return render(request, 'result_nananana.html')
 
 
 def result_money(request):
-    time.sleep(3)
+    time.sleep(2)
     return render(request, 'result_money.html')
 
 
 def result_oyaji(request):
-    time.sleep(3)
+    time.sleep(2)
     return render(request, 'result_oyaji.html')
 
+
+def result_seabiscuit(request):
+    time.sleep(2)
+    return render(request, 'result_seabiscuit.html')
 
 # @login_required
 # def ordered(request):
