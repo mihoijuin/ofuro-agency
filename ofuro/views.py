@@ -75,6 +75,12 @@ def result_seabiscuit(request):
     time.sleep(2)
     return render(request, 'result_seabiscuit.html')
 
+
+
+def result_momu(request):
+    time.sleep(2)
+    return render(request, 'result_momu.html')
+
 # @login_required
 # def ordered(request):
 #     user = UserSocialAuth.objects.get(user_id=request.user.id)

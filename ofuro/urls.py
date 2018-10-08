@@ -24,6 +24,7 @@ urlpatterns = [
     path(aes.encrypt(aes.key,'result-nananana'), views.result_nananana, name='result_nananana'),
     path(aes.encrypt(aes.key,'result-money'), views.result_money, name='result_money'),
     path(aes.encrypt(aes.key,'result-oyaji'), views.result_oyaji, name='result_oyaji'),
+    path(aes.encrypt(aes.key,'result-momu'), views.result_momu, name='result_momu'),
     path('mmDtzcWuWnC0pYkMBEugKgR5rXLRQRKv02WLfTIvzM=', views.result_seabiscuit, name='result_seabiscuit'),
     path('wait', views.wait, name='wait'),    # 例外発生時にリダイレクト
 ]
