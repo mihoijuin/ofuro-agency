@@ -197,7 +197,8 @@ header {
   background-color: #FFFBA0; }
 
 .result-img {
-  max-height: 500px; }
+  max-height: 25rem;
+  max-width: 43.75rem; }
 
 .result-greeting p {
   display: inline-block;
