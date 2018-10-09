@@ -26,7 +26,7 @@ def top(request):
         result_nananana = [root_url + encrypt_path('result-nananana')]
         result_money = [root_url + encrypt_path('result-money')]
         result_oyaji = [root_url + encrypt_path('result-oyaji')]
-        result_seabiscuit = [root_url + encrypt_path('result-seabiscuit')]
+        result_seabiscuit = [root_url + 'mmDtzcWuWnC0pYkMBEugKgR5rXLRQRKv02WLfTIvzM=']
         # resultページのURLをネタ枠が多くなるようにランダムに選ぶ
         result_urls = result_monkey * 2 + result_dog * 1 + result_duck * 1 + result_nananana * 1 + result_money * 5 + result_oyaji * 5 + result_seabiscuit * 1
         return render(request, 'top.html', {'result_urls': result_urls})
