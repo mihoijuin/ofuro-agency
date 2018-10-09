@@ -27,8 +27,9 @@ def top(request):
         result_money = [root_url + encrypt_path('result-money')]
         result_oyaji = [root_url + encrypt_path('result-oyaji')]
         result_seabiscuit = [root_url + 'mmDtzcWuWnC0pYkMBEugKgR5rXLRQRKv02WLfTIvzM=']
+        result_momu = [root_url + encrypt_path('result-momu')]
         # resultページのURLをネタ枠が多くなるようにランダムに選ぶ
-        result_urls = result_monkey * 2 + result_dog * 1 + result_duck * 1 + result_nananana * 1 + result_money * 5 + result_oyaji * 5 + result_seabiscuit * 1
+        result_urls = result_monkey * 2 + result_dog * 1 + result_duck * 1 + result_nananana * 1 + result_money * 5 + result_oyaji * 5 + result_seabiscuit * 1 + result_momu * 1
         return render(request, 'top.html', {'result_urls': result_urls})
     except:
         return redirect('/wait')
