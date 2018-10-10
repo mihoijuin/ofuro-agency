@@ -45,46 +45,77 @@ def wait(request):
 # resultへすんなり遷移させたくなかったのでsleep挟む
 def result_monkey(request):
     time.sleep(2)
-    return render(request, 'result_monkey.html', {'result_urls': result_urls})
+    try:
+        return render(request, 'result_monkey.html', {'result_urls': result_urls})
+    except:
+        return redirect('/wait')
 
 
 def result_dog(request):
     time.sleep(2)
-    return render(request, 'result_dog.html', {'result_urls': result_urls})
+    try:
+        return render(request, 'result_dog.html', {'result_urls': result_urls})
+    except:
+        return redirect('/wait')
 
 
 def result_duck(request):
     time.sleep(2)
-    return render(request, 'result_duck.html', {'result_urls': result_urls})
+    try:
+        return render(request, 'result_duck.html', {'result_urls': result_urls})
+    except:
+        return redirect('/wait')
 
 
 def result_nananana(request):
     time.sleep(2)
-    return render(
-        request, 'result_nananana.html', {'result_urls': result_urls}
-        )
+    try:
+        return render(
+            request, 'result_nananana.html', {'result_urls': result_urls}
+            )
+    except:
+        return redirect('/wait')
 
 
 def result_money(request):
     time.sleep(2)
-    return render(request, 'result_money.html', {'result_urls': result_urls})
+    try:
+        return render(
+            request, 'result_money.html', {'result_urls': result_urls}
+            )
+    except:
+        return redirect('/wait')
 
 
 def result_oyaji(request):
     time.sleep(2)
-    return render(request, 'result_oyaji.html', {'result_urls': result_urls})
+    try:
+        return render(
+            request, 'result_oyaji.html', {'result_urls': result_urls}
+            )
+    except:
+        return redirect('/wait')
 
 
 def result_seabiscuit(request):
     time.sleep(2)
-    return render(
-        request, 'result_seabiscuit.html', {'result_urls': result_urls}
-        )
+    try:
+        return render(
+            request, 'result_seabiscuit.html', {'result_urls': result_urls}
+            )
+    except:
+        return redirect('/wait')
 
 
 def result_momu(request):
     time.sleep(2)
-    return render(request, 'result_momu.html', {'result_urls': result_urls})
+    try:
+        return render(
+            request, 'result_momu.html', {'result_urls': result_urls}
+            )
+    except:
+        return redirect('/wait')
+
 
 # @login_required
 # def ordered(request):
