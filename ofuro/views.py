@@ -28,6 +28,7 @@ result_money = [root_url + encrypt_path('result-money')]
 result_oyaji = [root_url + encrypt_path('result-oyaji')]
 result_seabiscuit = [root_url + 'mmDtzcWuWnC0pYkMBEugKgR5rXLRQRKv02WLfTIvzM=']
 result_momu = [root_url + encrypt_path('result-momu')]
+result_sana = [root_url + encrypt_path('result-sana')]
 result_mam = [root_url + 'gunY0ZDCpndh1PkTaRRNw==']
 # resultページのURLをネタ枠が多くなるようにランダムに選ぶ
 result_urls = result_monkey + result_dog + result_duck + result_nananana + result_money * 3 + result_oyaji * 3 + result_seabiscuit + result_momu + result_mam
@@ -123,6 +124,16 @@ def result_mam(request):
     try:
         return render(
             request, 'result_mam.html', {'result_urls': result_urls}
+            )
+    except:
+        return redirect('/wait')
+
+
+def result_sana(request):
+    time.sleep(2)
+    try:
+        return render(
+            request, 'result_sana.html', {'result_urls': result_urls}
             )
     except:
         return redirect('/wait')
