@@ -16,7 +16,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # シークレットキー読み込み＠開発環境
-if 'local' in HOSTNAME:
+if 'IjuMihoMac' in HOSTNAME:
     from .local_settings import *
     SECRET_KEY = LOCAL_SECRET_KEY
 else:
