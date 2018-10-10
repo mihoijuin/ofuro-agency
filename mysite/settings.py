@@ -16,11 +16,27 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # シークレットキー読み込み＠開発環境
-if 'local' in HOSTNAME:
+if 'IjuMihoMac' in HOSTNAME:
     from .local_settings import *
     SECRET_KEY = LOCAL_SECRET_KEY
+    # Twitter認証用キー
+    SOCIAL_AUTH_TWITTER_KEY = LOCAL_SOCIAL_AUTH_TWITTER_KEY
+    SOCIAL_AUTH_TWITTER_SECRET = LOCAL_SOCIAL_AUTH_TWITTER_SECRET
+    # BOT用キー
+    CK = LOCAL_CK
+    CS = LOCAL_CS
+    AT = LOCAL_AT
+    ATS = LOCAL_ATS
 else:
     SECRET_KEY = os.environ['SECRET_KEY']
+    # Twitter認証キー
+    SOCIAL_AUTH_TWITTER_KEY = os.environ['SOCIAL_AUTH_TWITTER_KEY']
+    SOCIAL_AUTH_TWITTER_SECRET = os.environ['SOCIAL_AUTH_TWITTER_SECRET']
+    # BOT用のキー
+    CK = os.environ['CK']
+    CS = os.environ['CS']
+    AT = os.environ['AT']
+    ATS = os.environ['ATS']
 
 ALLOWED_HOSTS = ['*']
 
@@ -152,26 +168,6 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
-
-if 'local' in HOSTNAME:
-    from .local_settings import *
-    # Twitter認証用キー
-    SOCIAL_AUTH_TWITTER_KEY = LOCAL_SOCIAL_AUTH_TWITTER_KEY
-    SOCIAL_AUTH_TWITTER_SECRET = LOCAL_SOCIAL_AUTH_TWITTER_SECRET
-    # BOT用キー
-    CK = LOCAL_CK
-    CS = LOCAL_CS
-    AT = LOCAL_AT
-    ATS = LOCAL_ATS
-else:
-    # Twitter認証キー
-    SOCIAL_AUTH_TWITTER_KEY = os.environ['SOCIAL_AUTH_TWITTER_KEY']
-    SOCIAL_AUTH_TWITTER_SECRET = os.environ['SOCIAL_AUTH_TWITTER_SECRET']
-    # BOT用のキー
-    CK = os.environ['CK']
-    CS = os.environ['CS']
-    AT = os.environ['AT']
-    ATS = os.environ['ATS']
 
 # Twitter認証後リダイレクトURL
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/ordered'
