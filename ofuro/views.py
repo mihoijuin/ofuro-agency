@@ -30,7 +30,7 @@ result_seabiscuit = [root_url + 'mmDtzcWuWnC0pYkMBEugKgR5rXLRQRKv02WLfTIvzM=']
 result_momu = [root_url + encrypt_path('result-momu')]
 result_mam = [root_url + 'gunY0ZDCpndh1PkTaRRNw==']
 # resultページのURLをネタ枠が多くなるようにランダムに選ぶ
-result_urls = result_monkey + result_dog + result_duck + result_nananana + result_money * 3 + result_oyaji * 3 + result_seabiscuit + result_momu
+result_urls = result_monkey + result_dog + result_duck + result_nananana + result_money * 3 + result_oyaji * 3 + result_seabiscuit + result_momu + result_mam
 
 
 def top(request):
