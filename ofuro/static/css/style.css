@@ -130,7 +130,6 @@ p {
 /* header */
 header {
   display: flex;
-  justify-content: space-between;
   background-color: #A1E1EF;
   padding: 1.25rem 2.25rem; }
 
@@ -138,17 +137,6 @@ header {
   font-size: 2rem;
   font-weight: bold;
   margin-top: .3rem; }
-
-.header-share a {
-  display: inline-block;
-  border: solid 0.0625rem #7F7F7F;
-  border-radius: .2rem;
-  color: #7F7F7F;
-  font-size: .8rem;
-  font-weight: bold;
-  padding: .8rem; }
-  .header-share a:hover {
-    background-color: #cdeff6; }
 
 /* toppage */
 .top {

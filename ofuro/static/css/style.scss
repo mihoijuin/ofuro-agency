@@ -156,7 +156,6 @@ p {
 /* header */
 header {
   display: flex;
-  justify-content: space-between;
   background-color: $basic_color;
   padding: rem(20px) rem(36px);
 }
@@ -166,22 +165,6 @@ header {
     font-size: 2rem;
     font-weight: bold;
     margin-top: .3rem;
-  }
-}
-
-.header-share {
-  a {
-    display: inline-block;
-    border: solid rem(1px) $grey;
-    border-radius: .2rem;
-    color: $grey;
-    font-size: .8rem;
-    font-weight: bold;
-    padding: .8rem;
-
-    &:hover {
-      background-color: lighten($basic_color, 10%);
-    }
   }
 }
 
