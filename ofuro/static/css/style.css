@@ -211,7 +211,9 @@ header {
 
 .img-rounded {
   border-radius: 50%;
-  width: 35%; }
+  width: 40%;
+  max-height: 28.125rem;
+  max-width: 15.625rem; }
 
 /* terms */
 .terms h3 {

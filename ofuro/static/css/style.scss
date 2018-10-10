@@ -266,7 +266,9 @@ header {
 
 .img-rounded {
   border-radius: 50%;
-  width: 35%;
+  width: 40%;
+  max-height: rem(450px);
+  max-width: rem(250px);
 }
 
 /* terms */
