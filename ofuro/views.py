@@ -24,6 +24,7 @@ result_monkey = [root_url + 'LofG1lC3uIf7XnD6awGDw==']
 result_dog = [root_url + encrypt_path('result-dog')]
 result_duck = [root_url + encrypt_path('result-duck')]
 result_nananana = [root_url + encrypt_path('result-nananana')]
+result_muscle_nananana = [root_url + encrypt_path('result-muscle_nananana')]
 result_money = [root_url + encrypt_path('result-money')]
 result_oyaji = [root_url + encrypt_path('result-oyaji')]
 result_seabiscuit = [root_url + 'mmDtzcWuWnC0pYkMBEugKgR5rXLRQRKv02WLfTIvzM=']
@@ -32,7 +33,7 @@ result_sana = [root_url + encrypt_path('result-sana')]
 result_chihiro = [root_url + encrypt_path('result-chihiro')]
 result_mam = [root_url + 'gunY0ZDCpndh1PkTaRRNw==']
 # resultページのURLをネタ枠が多くなるようにランダムに選ぶ
-result_urls = result_monkey + result_dog + result_duck + result_nananana + result_money * 8 + result_oyaji * 8 + result_seabiscuit + result_momu + result_mam + result_sana + result_chihiro
+result_urls = result_monkey + result_dog + result_duck + result_nananana + result_money * 8 + result_oyaji * 8 + result_seabiscuit + result_momu + result_mam + result_sana + result_chihiro + result_muscle_nananana
 
 
 def top(request):
@@ -75,6 +76,17 @@ def result_nananana(request):
     try:
         return render(
             request, 'result_nananana.html', {'result_urls': result_urls}
+            )
+    except:
+        return redirect('/wait')
+
+
+def result_muscle_nananana(request):
+    time.sleep(2)
+    try:
+        return render(
+            request, 'result_muscle_nananana.html',
+            {'result_urls': result_urls}
             )
     except:
         return redirect('/wait')

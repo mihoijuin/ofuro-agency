@@ -22,6 +22,7 @@ urlpatterns = [
     path(aes.encrypt(aes.key,'result-dog'), views.result_dog, name='result_dog'),
     path(aes.encrypt(aes.key,'result-duck'), views.result_duck, name='result_duck'),
     path(aes.encrypt(aes.key,'result-nananana'), views.result_nananana, name='result_nananana'),
+    path(aes.encrypt(aes.key,'result-muscle_nananana'), views.result_muscle_nananana, name='result_muscle_nananana'),
     path(aes.encrypt(aes.key,'result-money'), views.result_money, name='result_money'),
     path(aes.encrypt(aes.key,'result-oyaji'), views.result_oyaji, name='result_oyaji'),
     path(aes.encrypt(aes.key,'result-momu'), views.result_momu, name='result_momu'),
