@@ -33,7 +33,7 @@ result_sana = [root_url + encrypt_path('result-sana')]
 result_chihiro = [root_url + encrypt_path('result-chihiro')]
 result_mam = [root_url + 'gunY0ZDCpndh1PkTaRRNw==']
 # resultページのURLをネタ枠が多くなるようにランダムに選ぶ
-result_urls = result_monkey + result_dog + result_duck + result_nananana + result_money * 8 + result_oyaji * 8 + result_seabiscuit + result_momu + result_mam + result_sana + result_chihiro + result_muscle_nananana
+result_urls = result_monkey + result_dog + result_duck + result_nananana + result_money * 8 + result_oyaji * 8 + result_seabiscuit + result_momu + result_mam + result_sana + result_chihiro + result_muscle_nananana *3
 
 
 def top(request):
