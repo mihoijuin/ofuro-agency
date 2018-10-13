@@ -29,6 +29,8 @@ urlpatterns = [
     path(aes.encrypt(aes.key,'result-sana'), views.result_sana, name='result_sana'),
     path(aes.encrypt(aes.key,'result-chihiro'), views.result_chihiro, name='result_chihiro'),
     path(aes.encrypt(aes.key,'result-higuma'), views.result_higuma, name='result_higuma'),
+    path(aes.encrypt(aes.key,'result-yukariko'), views.result_yukariko, name='result_yukariko'),
+    path(aes.encrypt(aes.key,'result-sorami'), views.result_sorami, name='result_sorami'),
     path('Hplos4rCjLihwEng3Ow==', views.result_amanatu, name='result_amanatu'),
     path('gunY0ZDCpndh1PkTaRRNw==', views.result_mam, name='result_mam'),
     path('mmDtzcWuWnC0pYkMBEugKgR5rXLRQRKv02WLfTIvzM=', views.result_seabiscuit, name='result_seabiscuit'),
