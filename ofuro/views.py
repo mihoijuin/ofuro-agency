@@ -32,13 +32,14 @@ result_momu = [root_url + encrypt_path('result-momu')]
 result_sana = [root_url + encrypt_path('result-sana')]
 result_chihiro = [root_url + encrypt_path('result-chihiro')]
 result_higuma = [root_url + encrypt_path('result-higuma')]
+result_yukariko = [root_url + encrypt_path('result-yukariko')]
 result_amanatu = [root_url + 'Hplos4rCjLihwEng3Ow==']
 result_mam = [root_url + 'gunY0ZDCpndh1PkTaRRNw==']
 # resultページのURLをネタ枠が多くなるようにランダムに選ぶ
 result_urls = result_monkey + result_dog + result_duck + result_money * 8\
     + result_oyaji * 8 + result_nananana + result_seabiscuit + result_momu\
     + result_mam + result_sana + result_chihiro + result_muscle_nananana * 3\
-    + result_higuma + result_amanatu
+    + result_higuma + result_amanatu + result_yukariko
 
 
 def top(request):
@@ -182,6 +183,16 @@ def result_amanatu(request):
     try:
         return render(
             request, 'result_amanatu.html', {'result_urls': result_urls}
+            )
+    except:
+        return redirect('/wait')
+
+
+def result_yukariko(request):
+    time.sleep(2)
+    try:
+        return render(
+            request, 'result_yukariko.html', {'result_urls': result_urls}
             )
     except:
         return redirect('/wait')
