@@ -185,6 +185,7 @@ header {
   background-color: #FFFBA0; }
 
 .result-img {
+  border-radius: .5rem;
   max-height: 31.25rem;
   max-width: 28.125rem; }
 
@@ -210,7 +211,7 @@ header {
     max-width: calc(100% - 100px); }
 
 .img-rounded {
-  border-radius: 50%;
+  border-radius: .5rem;
   width: 40%;
   max-height: 28.125rem;
   max-width: 15.625rem; }

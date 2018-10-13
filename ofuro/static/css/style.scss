@@ -235,6 +235,7 @@ header {
 
 
 .result-img {
+  border-radius: .5rem;
   max-height: rem(500px);
   max-width: rem(450px);
 }
@@ -266,7 +267,7 @@ header {
 }
 
 .img-rounded {
-  border-radius: 50%;
+  border-radius: .5rem;
   width: 40%;
   max-height: rem(450px);
   max-width: rem(250px);
