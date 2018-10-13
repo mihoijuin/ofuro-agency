@@ -31,9 +31,14 @@ result_seabiscuit = [root_url + 'mmDtzcWuWnC0pYkMBEugKgR5rXLRQRKv02WLfTIvzM=']
 result_momu = [root_url + encrypt_path('result-momu')]
 result_sana = [root_url + encrypt_path('result-sana')]
 result_chihiro = [root_url + encrypt_path('result-chihiro')]
+result_higuma = [root_url + encrypt_path('result-higuma')]
+result_amanatu = [root_url + 'Hplos4rCjLihwEng3Ow==']
 result_mam = [root_url + 'gunY0ZDCpndh1PkTaRRNw==']
 # resultページのURLをネタ枠が多くなるようにランダムに選ぶ
-result_urls = result_monkey + result_dog + result_duck + result_nananana + result_money * 8 + result_oyaji * 8 + result_seabiscuit + result_momu + result_mam + result_sana + result_chihiro + result_muscle_nananana *3
+result_urls = result_monkey + result_dog + result_duck + result_money * 8\
+    + result_oyaji * 8 + result_nananana + result_seabiscuit + result_momu\
+    + result_mam + result_sana + result_chihiro + result_muscle_nananana * 3\
+    + result_higuma + result_amanatu
 
 
 def top(request):
@@ -162,20 +167,21 @@ def result_chihiro(request):
         return redirect('/wait')
 
 
-# @login_required
-# def ordered(request):
-#     user = UserSocialAuth.objects.get(user_id=request.user.id)
-#     # Twitter認証後、ordered.htmlを表示させつつ裏でBotを動かし10分後にリプライさせる
-#     # // TODO 例外発生した時にはすでにorderedに飛んでしまってるので例外処理を考え直す
-#     try:
-#         bot = TweetBot()
-#         executor = ThreadPoolExecutor(max_workers=2)
-#         executor.submit(
-#             bot.reply_after_10min,
-#             user.access_token['screen_name']
-#             )
-#     except:
-#         bot = TweetBot()
-#         bot.reply_error(user.access_token['screen_name'])
-#         return redirect('/wait')
-#     return render(request, 'ordered.html')
+def result_higuma(request):
+    time.sleep(2)
+    try:
+        return render(
+            request, 'result_higuma.html', {'result_urls': result_urls}
+            )
+    except:
+        return redirect('/wait')
+
+
+def result_amanatu(request):
+    time.sleep(2)
+    try:
+        return render(
+            request, 'result_amanatu.html', {'result_urls': result_urls}
+            )
+    except:
+        return redirect('/wait')
