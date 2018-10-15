@@ -37,7 +37,7 @@ result_sorami = [root_url + encrypt_path('result-sorami')]
 result_amanatu = [root_url + 'Hplos4rCjLihwEng3Ow==']
 result_mam = [root_url + 'gunY0ZDCpndh1PkTaRRNw==']
 # resultページのURLをネタ枠が多くなるようにランダムに選ぶ
-result_urls = result_monkey * 3 + result_dog * 3 + result_duck * 3\
+result_urls = result_monkey * 4 + result_dog * 4 + result_duck * 3\
     + result_money * 6 + result_oyaji * 8 + result_nananana\
     + result_seabiscuit + result_momu + result_mam + result_sana\
     + result_chihiro + result_muscle_nananana * 3 + result_higuma\
