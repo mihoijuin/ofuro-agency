@@ -169,9 +169,7 @@ header {
 }
 
 /* toppage */
-.top {
-  background-color: $yellow;
-}
+
 
 .top-wrapper {
   padding: 6rem 0;
@@ -208,30 +206,20 @@ header {
   font-weight: 800;
 }
 
-.white-space {
-  white-space: pre-wrap;
-}
+.top { background-color: $yellow; }
 
-.logout-message {
-  font-size: .7rem;
-}
+.white-space { white-space: pre-wrap; }
 
-.logout {
-  font-size: .7rem;
-}
+.logout-message { font-size: .7rem; }
 
-.underline {
-  background: linear-gradient( transparent 70%, #e8a2a2 0% )
-}
+.logout { font-size: .7rem; }
 
-.message {
-  font-size: 1.8rem;
-}
+.underline { background: linear-gradient( transparent 70%, #e8a2a2 0% ) }
+
+.message { font-size: 1.8rem; }
 
 /* result page */
-.result {
-  background-color: $yellow;
-}
+.result { background-color: $yellow; }
 
 
 .result-img {

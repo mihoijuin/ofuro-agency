@@ -139,9 +139,6 @@ header {
   margin-top: .3rem; }
 
 /* toppage */
-.top {
-  background-color: #FFFBA0; }
-
 .top-wrapper {
   padding: 6rem 0; }
   .top-wrapper h1 {
@@ -164,6 +161,9 @@ header {
 .heading {
   font-size: 2.5rem;
   font-weight: 800; }
+
+.top {
+  background-color: #FFFBA0; }
 
 .white-space {
   white-space: pre-wrap; }

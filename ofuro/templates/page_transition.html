@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}申し込み完了 - お風呂代理店{% endblock %}
+
+{% block ogp %}
+<!-- OGPじゃないけどmetaタグを追加したいのでogpブロックを使用 -->
+<meta http-equiv="refresh" content="4;URL={{ result_urls|random }}">
+{% endblock %}
+{% block content %}
+  <div class="top">
+    <div class="container text-center py-5">
+      <h2 class="heading white-space my-3">ただいまスタッフが入浴中♨️
+  5秒くらい待ってください</h2>
+      <img src="{% static 'images/ofuro-waiting.gif' %}" alt="" class="result-img pb-5 mb-3">
+    </div>
+  </div>
+{% endblock %}

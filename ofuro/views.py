@@ -44,8 +44,15 @@ result_urls = result_monkey * 6 + result_dog * 6 + result_duck * 3\
     + result_amanatu + result_yukariko + result_sorami
 
 
+def page_transition(request):
+    return render(
+        request, 'page_transition.html',
+        {'result_urls': result_urls}
+        )
+
+
 def top(request):
-    return render(request, 'top.html', {'result_urls': result_urls})
+    return render(request, 'top.html')
 
 
 def wait(request):
@@ -56,155 +63,112 @@ def wait(request):
 # TODO 画像を管理画面から投稿してどんどんページを作成できるようにするのが理想
 # resultへすんなり遷移させたくなかったのでsleep挟む
 def result_monkey(request):
-    time.sleep(2)
     try:
-        return render(request, 'result_monkey.html', {'result_urls': result_urls})
+        return render(request, 'result_monkey.html')
     except:
         return redirect('/wait')
 
 
 def result_dog(request):
-    time.sleep(2)
     try:
-        return render(request, 'result_dog.html', {'result_urls': result_urls})
+        return render(request, 'result_dog.html')
     except:
         return redirect('/wait')
 
 
 def result_duck(request):
-    time.sleep(2)
     try:
-        return render(request, 'result_duck.html', {'result_urls': result_urls})
+        return render(request, 'result_duck.html')
     except:
         return redirect('/wait')
 
 
 def result_nananana(request):
-    time.sleep(2)
     try:
-        return render(
-            request, 'result_nananana.html', {'result_urls': result_urls}
-            )
+        return render(request, 'result_nananana.html')
     except:
         return redirect('/wait')
 
 
 def result_muscle_nananana(request):
-    time.sleep(2)
     try:
-        return render(
-            request, 'result_muscle_nananana.html',
-            {'result_urls': result_urls}
-            )
+        return render(request, 'result_muscle_nananana.html')
     except:
         return redirect('/wait')
 
 
 def result_money(request):
-    time.sleep(2)
     try:
-        return render(
-            request, 'result_money.html', {'result_urls': result_urls}
-            )
+        return render(request, 'result_money.html')
     except:
         return redirect('/wait')
 
 
 def result_oyaji(request):
-    time.sleep(2)
     try:
-        return render(
-            request, 'result_oyaji.html', {'result_urls': result_urls}
-            )
+        return render(request, 'result_oyaji.html')
     except:
         return redirect('/wait')
 
 
 def result_seabiscuit(request):
-    time.sleep(2)
     try:
-        return render(
-            request, 'result_seabiscuit.html', {'result_urls': result_urls}
-            )
+        return render(request, 'result_seabiscuit.html')
     except:
         return redirect('/wait')
 
 
 def result_momu(request):
-    time.sleep(2)
     try:
-        return render(
-            request, 'result_momu.html', {'result_urls': result_urls}
-            )
+        return render(request, 'result_momu.html')
     except:
         return redirect('/wait')
 
 
 def result_mam(request):
-    time.sleep(2)
     try:
-        return render(
-            request, 'result_mam.html', {'result_urls': result_urls}
-            )
+        return render(request, 'result_mam.html')
     except:
         return redirect('/wait')
 
 
 def result_sana(request):
-    time.sleep(2)
     try:
-        return render(
-            request, 'result_sana.html', {'result_urls': result_urls}
-            )
+        return render(request, 'result_sana.html')
     except:
         return redirect('/wait')
 
 
 def result_chihiro(request):
-    time.sleep(2)
     try:
-        return render(
-            request, 'result_chihiro.html', {'result_urls': result_urls}
-            )
+        return render(request, 'result_chihiro.html')
     except:
         return redirect('/wait')
 
 
 def result_higuma(request):
-    time.sleep(2)
     try:
-        return render(
-            request, 'result_higuma.html', {'result_urls': result_urls}
-            )
+        return render(request, 'result_higuma.html')
     except:
         return redirect('/wait')
 
 
 def result_amanatu(request):
-    time.sleep(2)
     try:
-        return render(
-            request, 'result_amanatu.html', {'result_urls': result_urls}
-            )
+        return render(request, 'result_amanatu.html')
     except:
         return redirect('/wait')
 
 
 def result_sorami(request):
-    time.sleep(2)
     try:
-        return render(
-            request, 'result_sorami.html', {'result_urls': result_urls}
-            )
+        return render(request, 'result_sorami.html')
     except:
         return redirect('/wait')
 
 
 def result_yukariko(request):
-    time.sleep(2)
     try:
-        return render(
-            request, 'result_yukariko.html', {'result_urls': result_urls}
-            )
+        return render(request, 'result_yukariko.html')
     except:
         return redirect('/wait')

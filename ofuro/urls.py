@@ -11,6 +11,7 @@ aes = AESCipher(key)
 # 結局うけつけるのはpathで指定した内容なので複合化意味なくね？ってなった
 urlpatterns = [
     path('', views.top, name='top'),
+    path('page-transition', views.page_transition, name='page_transition'),
     # path('result', views.result, name='result'),
     # ! BOT使わなくなったので下記はコメントアウト
     # path('', login, {'template_name': 'top.html', }, name='top'),
