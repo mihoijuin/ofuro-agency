@@ -45,6 +45,7 @@ result_urls = result_monkey * 6 + result_dog * 6 + result_duck * 3\
 
 
 def page_transition(request):
+    time.sleep(2)
     return render(
         request, 'page_transition.html',
         {'result_urls': result_urls}
