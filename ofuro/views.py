@@ -173,3 +173,10 @@ def result_yukariko(request):
         return render(request, 'result_yukariko.html')
     except:
         return redirect('/wait')
+
+
+def result_beryl(request):
+    try:
+        return render(request, 'result_beryl.html')
+    except:
+        return redirect('/wait')
