@@ -42,7 +42,7 @@ result_beryl = [root_url + 'Gqpi2dVPDOVSBVdB6qRg==']
 # resultページのURLをネタ枠が多くなるようにランダムに選ぶ
 result_urls = result_monkey * 11 + result_dog * 13 + result_duck * 3\
     + result_money * 15 + result_oyaji * 15 + result_nananana\
-    + result_seabiscuit + result_momu + result_mam + result_sana\
+    + result_seabiscuit + result_momu * 8 + result_mam + result_sana\
     + result_chihiro + result_muscle_nananana * 3 + result_higuma\
     + result_amanatu + result_yukariko + result_sorami + result_beryl\
     + result_haijoi + result_mokyu
