@@ -33,6 +33,7 @@ urlpatterns = [
     path(aes.encrypt(aes.key,'result-yukariko'), views.result_yukariko, name='result_yukariko'),
     path(aes.encrypt(aes.key,'result-sorami'), views.result_sorami, name='result_sorami'),
     path(aes.encrypt(aes.key,'result-mokyu'), views.result_mokyu, name='result_mokyu'),
+    path('9XvbwI1vFQIHZDEK5YBmQ==', views.result_mareru, name='result_mareru'),
     path('zRdifYIsoUzKIBWCyz8vA==', views.result_haijoi, name='result_haijoi'),
     path('Gqpi2dVPDOVSBVdB6qRg==', views.result_beryl, name='result_beryl'),
     path('Hplos4rCjLihwEng3Ow==', views.result_amanatu, name='result_amanatu'),
