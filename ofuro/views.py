@@ -42,9 +42,9 @@ result_amanatu = [root_url + 'Hplos4rCjLihwEng3Ow==']
 result_mam = [root_url + 'gunY0ZDCpndh1PkTaRRNw==']
 result_beryl = [root_url + 'Gqpi2dVPDOVSBVdB6qRg==']
 # resultページのURLをネタ枠が多くなるようにランダムに選ぶ
-result_urls = result_monkey * 10 + result_dog * 10 + result_duck * 3\
-    + result_money * 10 + result_oyaji * 10 + result_nananana\
-    + result_seabiscuit + result_momu * 5 + result_mam + result_sana\
+result_urls = result_monkey * 8 + result_dog * 8 + result_duck * 3\
+    + result_money * 7 + result_oyaji * 7 + result_nananana\
+    + result_seabiscuit + result_momu * 3 + result_mam + result_sana\
     + result_chihiro + result_muscle_nananana * 3 + result_higuma\
     + result_amanatu + result_yukariko + result_sorami + result_beryl\
     + result_haijoi + result_mokyu + result_mareru + result_ain
