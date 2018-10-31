@@ -35,6 +35,7 @@ result_higuma = [root_url + encrypt_path('result-higuma')]
 result_yukariko = [root_url + encrypt_path('result-yukariko')]
 result_sorami = [root_url + encrypt_path('result-sorami')]
 result_mokyu = [root_url + encrypt_path('result-mokyu')]
+result_momiji = [root_url + '3qhr3kPU1pjMCFhe4HAg==']
 result_ain = [root_url + '5RoEW5fzh7caExkGOIFg==']
 result_mareru = [root_url + '9XvbwI1vFQIHZDEK5YBmQ==']
 result_haijoi = [root_url + 'zRdifYIsoUzKIBWCyz8vA==']
@@ -47,7 +48,7 @@ result_urls = result_monkey * 5 + result_dog * 5 + result_duck\
     + result_seabiscuit + result_momu * 3 + result_mam + result_sana\
     + result_chihiro + result_muscle_nananana * 3 + result_higuma\
     + result_amanatu + result_yukariko + result_sorami + result_beryl\
-    + result_haijoi + result_mokyu + result_mareru + result_ain
+    + result_haijoi + result_mokyu + result_mareru + result_ain + result_momiji
 
 
 def page_transition(request):
@@ -212,5 +213,12 @@ def result_mareru(request):
 def result_ain(request):
     try:
         return render(request, 'result_ain.html')
+    except:
+        return redirect('/wait')
+
+
+def result_momiji(request):
+    try:
+        return render(request, 'result_momiji.html')
     except:
         return redirect('/wait')
