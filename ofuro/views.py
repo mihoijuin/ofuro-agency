@@ -16,47 +16,42 @@ def encrypt_path(path):    # urls.pyでも使い回せるようにURL全部で�
     return enc_path
 
 
-# ランダム表示する結果URLリストを作成（URLは暗号化）
-# 複数のビューで呼び出すため、グローバル変数に代入
-root_url = 'https://ofuro-agency.herokuapp.com/'
-result_monkey = [root_url + 'LofG1lC3uIf7XnD6awGDw==']
-result_dog = [root_url + encrypt_path('result-dog')]
-result_duck = [root_url + encrypt_path('result-duck')]
-result_nananana = [root_url + encrypt_path('result-nananana')]
-result_muscle_nananana = [root_url + encrypt_path('result-muscle_nananana')]
-result_money = [root_url + encrypt_path('result-money')]
-result_oyaji = [root_url + encrypt_path('result-oyaji')]
-result_seabiscuit = [root_url + 'mmDtzcWuWnC0pYkMBEugKgR5rXLRQRKv02WLfTIvzM=']
-result_momu = [root_url + encrypt_path('result-momu')]
-result_sana = [root_url + encrypt_path('result-sana')]
-result_chihiro = [root_url + encrypt_path('result-chihiro')]
-result_higuma = [root_url + encrypt_path('result-higuma')]
-result_yukariko = [root_url + encrypt_path('result-yukariko')]
-result_sorami = [root_url + encrypt_path('result-sorami')]
-result_mokyu = [root_url + encrypt_path('result-mokyu')]
-result_imari = [root_url + '3ydjDgRLbhrVc0RIqOyJg==']
-result_momiji = [root_url + '3qhr3kPU1pjMCFhe4HAg==']
-result_ain = [root_url + '5RoEW5fzh7caExkGOIFg==']
-result_mareru = [root_url + '9XvbwI1vFQIHZDEK5YBmQ==']
-result_haijoi = [root_url + 'zRdifYIsoUzKIBWCyz8vA==']
-result_amanatu = [root_url + 'Hplos4rCjLihwEng3Ow==']
-result_mam = [root_url + 'gunY0ZDCpndh1PkTaRRNw==']
-result_beryl = [root_url + 'Gqpi2dVPDOVSBVdB6qRg==']
-# resultページのURLをネタ枠が多くなるようにランダムに選ぶ
-result_urls = result_monkey * 5 + result_dog * 5 + result_duck\
-    + result_money * 5 + result_oyaji * 5 + result_nananana\
-    + result_seabiscuit + result_momu * 3 + result_mam + result_sana\
-    + result_chihiro + result_muscle_nananana * 3 + result_higuma\
-    + result_amanatu + result_yukariko + result_sorami + result_beryl\
-    + result_haijoi + result_mokyu + result_mareru + result_ain\
-    + result_momiji + result_imari
-
-
 def page_transition(request):
-    time.sleep(2)
+    # ランダム表示する結果URLリストを作成（URLは暗号化）
+    result_monkey = [encrypt_path('result-monkey')]
+    result_dog = [encrypt_path('result-dog')]
+    result_duck = [encrypt_path('result-duck')]
+    result_nananana = [encrypt_path('result-nananana')]
+    result_muscle_nananana = [encrypt_path('result-muscle_nananana')]
+    result_money = [encrypt_path('result-money')]
+    result_oyaji = [encrypt_path('result-oyaji')]
+    result_seabiscuit = [encrypt_path('result-seabiscuit')]
+    result_momu = [encrypt_path('result-momu')]
+    result_sana = [encrypt_path('result-sana')]
+    result_chihiro = [encrypt_path('result-chihiro')]
+    result_higuma = [encrypt_path('result-higuma')]
+    result_yukariko = [encrypt_path('result-yukariko')]
+    result_sorami = [encrypt_path('result-sorami')]
+    result_mokyu = [encrypt_path('result-mokyu')]
+    result_momiji = [encrypt_path('result-momiji')]
+    result_imari = [encrypt_path('result-imari')]
+    result_ain = [encrypt_path('result-ain')]
+    result_mareru = [encrypt_path('result-mareru')]
+    result_haijoi = [encrypt_path('result-haijoi')]
+    result_amanatu = [encrypt_path('result-amanatu')]
+    result_mam = [encrypt_path('result-mam')]
+    result_beryl = [encrypt_path('result-beryl')]
+    # resultページのURLをネタ枠が多くなるようにランダムに選ぶ
+    result_paths = result_monkey * 5 + result_dog * 5 + result_duck\
+        + result_money * 5 + result_oyaji * 5 + result_nananana\
+        + result_seabiscuit + result_momu * 3 + result_mam + result_sana\
+        + result_chihiro + result_muscle_nananana * 3 + result_higuma\
+        + result_amanatu + result_yukariko + result_sorami + result_beryl\
+        + result_haijoi + result_mokyu + result_mareru + result_ain\
+        + result_momiji + result_imari
     return render(
         request, 'page_transition.html',
-        {'result_urls': result_urls}
+        {'result_paths': result_paths}
         )
 
 
