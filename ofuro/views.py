@@ -11,9 +11,8 @@ from .crypturl import AESCipher
 
 def encrypt_path(path):    # urls.pyでも使い回せるようにURL全部でなくパスを暗号化
     '''結果ページのURLをパッと見てわからなくするために暗号化'''
-    key = 'poriporiporiofuroporipori'
-    aes = AESCipher(key)
-    enc_path = aes.encrypt(aes.key, path)
+    aes = AESCipher()
+    enc_path = aes.encrypt(path)
     return enc_path
 
 
