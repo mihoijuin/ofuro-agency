@@ -5,7 +5,7 @@
 
 {% block ogp %}
 <!-- OGPじゃないけどmetaタグを追加したいのでogpブロックを使用 -->
-<meta http-equiv="refresh" content="4;URL={{ result_urls|random }}">
+<meta http-equiv="refresh" content="4;URL={% url 'ofuro:top' %}{{ result_paths|random }}">
 {% endblock %}
 {% block content %}
   <div class="top">
