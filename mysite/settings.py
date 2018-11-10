@@ -44,6 +44,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'ofuro.apps.OfuroConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,8 +52,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',    # Heroku
     'django.contrib.staticfiles',
-    'ofuro',    # app
-    'social_django',    # Twitter認証用
 ]
 
 MIDDLEWARE = [
