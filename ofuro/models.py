@@ -14,6 +14,7 @@ class OfuroResult(models.Model):
 
 class GuestIntroduce(models.Model):
     result = models.ForeignKey(OfuroResult, on_delete=models.CASCADE)
+    introduce_url = models.CharField(max_length=500)
     introduce_text = models.CharField(max_length=50)
 
     def __str__(self):
