@@ -63,17 +63,28 @@ def wait(request):
 
 def result_detail(request, pk):
     result = get_object_or_404(OfuroResult, pk=pk)
-    guest_introduces = get_list_or_404(GuestIntroduce, result=pk)
+    # ゲストの場合はゲスト紹介文をテンプレートに渡す
+    try:
+        guest_introduces = GuestIntroduce.objects.get(result=pk)
+        return render(
+            request,
+            'result_detail.html',
+            {
+                'result': result,
+                'guest_introduces': guest_introduces,
+                'path': pk
+            }
+        )
+    except:
+        return render(
+            request,
+            'result_detail.html',
+            {
+                'result': result,
+                'path': pk
+            }
+        )
     # aes = AESCipher()
     # result_id = aes.decrypt(encrypt_pk)
     # result = get_object_or_404(OfuroResult, pk=pk)
     # guest_introduces = get_list_or_404(GuestIntroduce, result=result_id)
-    return render(
-        request,
-        'result_detail.html',
-        {
-            'result': result,
-            'guest_introduces': guest_introduces,
-            'path': pk
-        }
-    )
