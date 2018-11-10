@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}お風呂代行しました♡ - お風呂代理店{% endblock %}
+
+{% block ogp %}
+<meta property="og:title" content="お風呂代わりに入りました♡">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{% url 'ofuro:top' %}static/images/{{ result.image_url_L }}">
+<meta property="og:site_name" content="お風呂代わりに入りました♡">
+<meta property="og:description" content="お風呂がめんどくさいお客さまの代わりにお風呂に入りました。いい湯でした。">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@ofuro_agency">
+<meta name="twitter:title" content="お風呂代わりに入りました♡">
+<meta name="twitter:description" content="お風呂がめんどくさいお客さまの代わりにお風呂に入りました。いい湯でした。">
+<meta name="twitter:image:src" content="{% url 'ofuro:top' %}static/images/{{ result.image_url_L }}">
+{% endblock %}
+
+
+{% block content %}
+  <div class="result">
+    <div class="container text-center py-5">
+      <p class="font-weight-bold pt-4">お客さまの代わりに</p>
+      <h2 class="heading">＼お風呂♨️入りました♡／</h2>
+      <img src="{% url 'ofuro:top' %}static/images/{{ result.image_url_L }}" alt="" class="result-img my-sm-3 pb-3">
+      <p class="font-weight-bold my-3">{{ result.staff_name }}がお風呂を代行してくれました...！</p>
+      {% if guest_introduces %}
+      {% for introduce in guest_introduces %}
+      <a href="{{ introduce.introduce_url }}" class="font-weight-bold btn btn-primary mb-3" target="_blank">{{ introduce.introduce_text }}</a>
+      {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="container text-center my-5 py-5">
+    <div class="result-greeting my-5 py-sm-5">
+      <p>またのご利用お待ちしております♡</p>
+      <img src="{% url 'ofuro:top' %}static/images/{{ result.image_url_S }}" alt="" class="img-rounded">
+    </div>
+
+    <p class="my-2">＼お風呂代行してもらった自慢をしよう／</p>
+    <a href="https://twitter.com/share?url=https://ofuro-agency.herokuapp.com/results/{{ path }}&related=twitterapi%2Ctwitter&hashtags=お風呂めんどいときはお風呂代理店へ&text={{ result.share_text }}" target="_blank" onclick="window.open(this.href, 'tweetwindow', 'width=650, height=470, personalbar=0, toolbar=0, scrollbars=1, sizable=1'); return false;" class="btn btn-primary text-white font-weight-bold p-sm-3"><span class="fab fa-twitter"> 代行担当者をシェア</span></a>
+
+    <p class="my-5 pt-5">お風呂代理店には他にも個性的なスタッフがたくさん働いています。ぜひ他のスタッフにも会いに来てくださいね🐤</p>
+
+    <p class="my-2">＼他のスタッフにも会いたい方はこちら／</p>
+    <a href="{% url 'ofuro:page_transition' %}" class="btn btn-danger text-white p-sm-3"><span class="fas fa-bath"></span> もう一度お風呂代行してもらう</a>
+  </div>
+{% endblock %}
