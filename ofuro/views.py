@@ -48,12 +48,16 @@ def top(request):
     return render(request, 'top.html')
 
 
+def wait(request):
+    return render(request, 'wait.html')
+
+
 def result_detail(request, enc):
-    aes = AESCipher()
-    pk = aes.decrypt(enc)
-    result = get_object_or_404(OfuroResult, result_id=pk)
     # ゲストの場合はゲスト紹介文をテンプレートに渡す
     try:
+        aes = AESCipher()
+        pk = aes.decrypt(enc)
+        result = get_object_or_404(OfuroResult, result_id=pk)
         guest_introduces = get_list_or_404(GuestIntroduce, result=pk)
         return render(
             request,
@@ -64,6 +68,8 @@ def result_detail(request, enc):
                 'path': enc,
             }
         )
+    except ValueError:
+        return redirect('/wait')
     except:
         return render(
             request,
