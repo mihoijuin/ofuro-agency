@@ -2,10 +2,9 @@ import random
 import sched
 import time
 
-
 import tweepy
-
 from django.conf import settings
+
 from .crypturl import AESCipher
 
 

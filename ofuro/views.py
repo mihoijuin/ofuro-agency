@@ -1,17 +1,7 @@
-from concurrent.futures import ThreadPoolExecutor
-import time
+from django.shortcuts import (get_list_or_404, get_object_or_404, redirect,
+                              render)
 
-from django.contrib.auth.decorators import login_required
-from django.shortcuts import redirect, render, get_object_or_404, get_list_or_404
-
-from .models import OfuroResult, GuestIntroduce
-from .crypturl import AESCipher
-
-# def encrypt_path(path):    # urls.pyでも使い回せるようにURL全部でなくパスを暗号化
-#     '''結果ページのURLをパッと見てわからなくするために暗号化'''
-#     aes = AESCipher()
-#     enc_path = aes.encrypt(path)
-#     return enc_path
+from .models import GuestIntroduce, OfuroResult
 
 
 def page_transition(request):
@@ -31,10 +21,6 @@ def page_transition(request):
 
 def top(request):
     return render(request, 'top.html')
-
-
-def wait(request):
-    return render(request, 'wait.html')
 
 
 def result_detail(request, pk):

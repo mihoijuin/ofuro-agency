@@ -1,8 +1,8 @@
 import os
 from socket import gethostname
 
-import django_heroku
 import dj_database_url
+import django_heroku
 
 # HOSTNAME
 HOSTNAME = gethostname()

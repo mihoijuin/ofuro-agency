@@ -1,5 +1,6 @@
-from Crypto.Cipher import AES
 import base64
+
+from Crypto.Cipher import AES
 
 
 class AESCipher:
