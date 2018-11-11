@@ -65,7 +65,7 @@ def result_detail(request, pk):
     result = get_object_or_404(OfuroResult, pk=pk)
     # ゲストの場合はゲスト紹介文をテンプレートに渡す
     try:
-        guest_introduces = GuestIntroduce.objects.get(result=pk)
+        guest_introduces = get_list_or_404(GuestIntroduce, result=pk)
         return render(
             request,
             'result_detail.html',
