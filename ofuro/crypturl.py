@@ -1,5 +1,6 @@
-from Crypto.Cipher import AES
 import base64
+
+from Crypto.Cipher import AES
 
 
 class AESCipher:
@@ -32,20 +33,20 @@ class AESCipher:
         data_cipher = aes.encrypt(data)
         encdata = base64.b64encode(data_cipher).decode('utf-8')
         # URLに含めない'/'や'+'を置換する
-        encdata = encdata.replace('/', '!')
-        encdata = encdata.replace('+', '(')
+        encdata = encdata.replace('/', '-')
+        encdata = encdata.replace('+', '_')
         return encdata
 
     def decrypt(self, encdata):
         '''複合化する'''
         # URLに含めない'/'や'+'を元に戻す
-        encdata = encdata.replace('!', '/')
-        encdata = encdata.replace('(', '+')
+        encdata = encdata.replace('-', '/')
+        encdata = encdata.replace('_', '+')
         # キーの文字数を調節
         key = self.mkpad(self.key, 16)
         key = key[:16]
         # 複合化
         aes = AES.new(key, self.mode, self.iv)
         encdata = base64.b64decode(encdata)     # バイト列に
-        data = aes.decrypt(encdata)
+        data = aes.decrypt(encdata).strip()
         return data.decode('utf-8')     # バイト列を文字列に

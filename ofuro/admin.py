@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import GuestIntroduce, OfuroResult
+
+admin.site.register(OfuroResult)
+admin.site.register(GuestIntroduce)
