@@ -76,6 +76,6 @@ def result_detail(request, enc):
             'result_detail.html',
             {
                 'result': result,
-                'path': pk
+                'path': enc
             }
         )
