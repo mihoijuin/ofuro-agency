@@ -1,3 +1,5 @@
+import random
+
 from django.shortcuts import (get_list_or_404, get_object_or_404, redirect,
                               render)
 
@@ -6,41 +8,22 @@ from .models import GuestIntroduce, OfuroResult
 
 
 def page_transition(request):
+    # idを暗号化したものをURLにしているため全idを取得
+    result_id_list = list(
+        OfuroResult.objects.values_list('result_id', flat=True))
+    # 暗号化
     aes = AESCipher()
-    monkey = [aes.encrypt('monkey')]
-    dog = [aes.encrypt('dog')]
-    duck = [aes.encrypt('duck')]
-    money = [aes.encrypt('money')]
-    oyaji = [aes.encrypt('oyaji')]
-    nananana = [aes.encrypt('nananana')]
-    seabiscuit = [aes.encrypt('seabiscuit')]
-    momu = [aes.encrypt('momu')]
-    mam = [aes.encrypt('mam')]
-    sana = [aes.encrypt('sana')]
-    chihiro = [aes.encrypt('chihiro')]
-    kintanikuo = [aes.encrypt('kintanikuo')]
-    higuma = [aes.encrypt('higuma')]
-    amanatu = [aes.encrypt('amanatu')]
-    yukariko = [aes.encrypt('yukariko')]
-    sorami = [aes.encrypt('sorami')]
-    beryl = [aes.encrypt('beryl')]
-    haijoi = [aes.encrypt('haijoi')]
-    mokyu = [aes.encrypt('mokyu')]
-    mareru = [aes.encrypt('mareru')]
-    ain = [aes.encrypt('ain')]
-    momiji = [aes.encrypt('momiji')]
-    imari = [aes.encrypt('imari')]
-    # resultページのURLをネタ枠が多くなるようにランダムに選ぶ
-    result_paths = monkey * 5 + dog * 5 + duck\
-        + money * 5 + oyaji * 5 + nananana\
-        + seabiscuit + momu * 3 + mam + sana\
-        + chihiro + kintanikuo * 3 + higuma\
-        + amanatu + yukariko + sorami + beryl\
-        + haijoi + mokyu + mareru + ain\
-        + momiji + imari
+    result_paths = [aes.encrypt(result_id) for result_id in result_id_list]
+    # ネタ枠が多くなるようにする
+    regular_staff = ['monkey', 'dog', 'duck', 'money', 'oyaji']
+    for result_path in result_paths:
+        if result_path in regular_staff:
+            result_paths.extend([result_path] * 5)
+    # ランダムに一つ選択
+    result_path = random.choice(result_paths)
     return render(
         request, 'page_transition.html',
-        {'result_paths': result_paths}
+        {'result_path': result_path}
         )
 
 
