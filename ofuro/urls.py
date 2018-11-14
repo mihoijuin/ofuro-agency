@@ -5,6 +5,8 @@ from django.urls import path, re_path
 
 from . import views
 
+app_name = 'ofuro'
+
 # 結局うけつけるのはpathで指定した内容なので複合化意味なくね？ってなった
 urlpatterns = [
     path('', views.top, name='top'),
@@ -14,6 +16,4 @@ urlpatterns = [
 ]
 
 # メディアファイル公開用のURL
-if settings.DEBUG:
-    urlpatterns += static(
-        settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
