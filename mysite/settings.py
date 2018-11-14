@@ -44,7 +44,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'ofuro.apps.OfuroConfig',
+    'ofuro.apps.OfuroConfig',   # app
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',    # Heroku
     'django.contrib.staticfiles',
+    'cloudinary',   # cloudinary
+    'cloudinary_storage',   # cloudinary
 ]
 
 MIDDLEWARE = [
@@ -164,12 +166,14 @@ STATICFILES_DIRS = (
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# Twitter認証用
-AUTHENTICATION_BACKENDS = [
-    'social_core.backends.twitter.TwitterOAuth',
-    'django.contrib.auth.backends.ModelBackend',
-]
+# cloudinary
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'hwf4kuxys',
+    'API_KEY': '716158433798757',
+    'API_SECRET': 'VeJQOY3PGZFRx4ga8ywr8hWc1nc'
+}
 
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Twitter認証後リダイレクトURL
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/ordered'
