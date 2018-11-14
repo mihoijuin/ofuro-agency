@@ -19,24 +19,20 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 if 'IjuMihoMac' in HOSTNAME:
     from .local_settings import *
     SECRET_KEY = LOCAL_SECRET_KEY
-    # Twitter認証用キー
-    SOCIAL_AUTH_TWITTER_KEY = LOCAL_SOCIAL_AUTH_TWITTER_KEY
-    SOCIAL_AUTH_TWITTER_SECRET = LOCAL_SOCIAL_AUTH_TWITTER_SECRET
-    # BOT用キー
-    CK = LOCAL_CK
-    CS = LOCAL_CS
-    AT = LOCAL_AT
-    ATS = LOCAL_ATS
+    # cloudinary
+    CLOUDINARY_STORAGE = {
+        'CLOUD_NAME': 'hwf4kuxys',
+        'API_KEY': LOCAL_CLOUDINARY_KEY,
+        'API_SECRET': LOCAL_CLOUDINARY_SECRET
+    }
 else:
     SECRET_KEY = os.environ['SECRET_KEY']
-    # Twitter認証キー
-    SOCIAL_AUTH_TWITTER_KEY = os.environ['SOCIAL_AUTH_TWITTER_KEY']
-    SOCIAL_AUTH_TWITTER_SECRET = os.environ['SOCIAL_AUTH_TWITTER_SECRET']
-    # BOT用のキー
-    CK = os.environ['CK']
-    CS = os.environ['CS']
-    AT = os.environ['AT']
-    ATS = os.environ['ATS']
+    # cloudinary
+    CLOUDINARY_STORAGE = {
+        'CLOUD_NAME': 'hwf4kuxys',
+        'API_KEY': os.environ['CLOUDINARY_KEY'],
+        'API_SECRET': os.environ['CLOUDINARY_SECRET']
+    }
 
 ALLOWED_HOSTS = ['*']
 
@@ -167,12 +163,6 @@ STATICFILES_DIRS = (
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # cloudinary
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'hwf4kuxys',
-    'API_KEY': '716158433798757',
-    'API_SECRET': 'VeJQOY3PGZFRx4ga8ywr8hWc1nc'
-}
-
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Twitter認証後リダイレクトURL

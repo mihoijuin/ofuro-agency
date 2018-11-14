@@ -50,3 +50,10 @@ class AESCipher:
         encdata = base64.b64decode(encdata)     # バイト列に
         data = aes.decrypt(encdata).strip()
         return data.decode('utf-8')     # バイト列を文字列に
+
+if __name__ == '__main__':
+    aes = AESCipher()
+    result_id = input('id: ')
+    enc = aes.encrypt(result_id)
+    print(enc)
+    print(aes.decrypt(enc))
