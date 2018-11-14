@@ -1,8 +1,8 @@
 from django.shortcuts import (get_list_or_404, get_object_or_404, redirect,
                               render)
 
-from .models import GuestIntroduce, OfuroResult
 from .crypturl import AESCipher
+from .models import GuestIntroduce, OfuroResult
 
 
 def page_transition(request):
