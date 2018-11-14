@@ -147,6 +147,9 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 # heroku
 STATIC_ROOT = os.path.join(BASE_DIR, 'ofuro/staticfiles')
 STATIC_URL = '/static/'
