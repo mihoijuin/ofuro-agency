@@ -15,6 +15,7 @@ pycrypto = "*"
 django-heroku = "*"
 "psycopg2-binary" = "*"
 requests = "*"
+pillow = "*"
 
 [dev-packages]
 
