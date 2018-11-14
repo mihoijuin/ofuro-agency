@@ -4,8 +4,6 @@ from django.db import models
 class OfuroResult(models.Model):
     result_id = models.CharField(max_length=20, primary_key=True)
     staff_name = models.CharField(max_length=20)
-    # image_url_L = models.CharField(max_length=200)
-    # image_url_S = models.CharField(max_length=200)
     image_L = models.ImageField(upload_to='images/', null=True, blank=True)
     image_S = models.ImageField(upload_to='images/', null=True, blank=True)
     share_text = models.CharField(max_length=100)
