@@ -23,7 +23,7 @@
       <p class="font-weight-bold pt-4">お客さまの代わりに</p>
       <h2 class="heading">＼お風呂♨️入りました♡／</h2>
       <img src="{{ result.image_L.url }}" alt="" class="result-img my-sm-3 pb-3">
-      <p class="font-weight-bold my-3">当店自慢のスタッフ{{ result.staff_name }}がお風呂を代行してくれました...！</p>
+      <p class="font-weight-bold my-3">当店自慢のスタッフ {{ result.staff_name }}がお風呂を代行してくれました...！</p>
       {% if guest_introduces %}
       {% for introduce in guest_introduces %}
       <a href="{{ introduce.introduce_url }}" class="font-weight-bold btn btn-primary mb-3" target="_blank">{{ introduce.introduce_text }}</a>
