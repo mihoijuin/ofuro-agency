@@ -78,10 +78,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                # Twitter認証用
-                'social_django.context_processors.backends',
-                # Twitter認証用
-                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -164,9 +160,6 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # cloudinary
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-# Twitter認証後リダイレクトURL
-SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/ordered'
 
 # Heroku
 DEBUG = False
