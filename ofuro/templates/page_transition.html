@@ -6,7 +6,6 @@
 {% block ogp %}
 <!-- OGPじゃないけどmetaタグを追加したいのでogpブロックを使用 -->
 <meta http-equiv="refresh" content="4;URL={% url 'ofuro:top' %}results/{{ result_path }}">
-<script src="{% static 'js/count.js' %}"></script>
 {% endblock %}
 {% block content %}
   <div class="top">
@@ -16,4 +15,8 @@
       <img src="{% static 'images/ofuro-waiting.gif' %}" alt="" class="result-img pb-5 mb-3">
     </div>
   </div>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'js/count.js' %}"></script>
 {% endblock %}

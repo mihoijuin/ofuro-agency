@@ -31,6 +31,10 @@ def top(request):
     return render(request, 'top.html')
 
 
+def staffs(request):
+    return render(request, 'staffs.html')
+
+
 def wait(request):
     return render(request, 'wait.html')
 
