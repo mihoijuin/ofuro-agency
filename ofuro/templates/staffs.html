@@ -14,7 +14,8 @@
       {% for stuff in stuffs %}
       <li>{{ stuff }}</li>
       <form action="{% url 'ofuro:page_transition' %}" method="POST">
-        <button value="{{ stuff.result_id }}">指名代行</button>
+        {% csrf_token %}
+        <button type="submit" name="order" value="{{ stuff.result_id }}">指名代行</button>
       </form>
       {% endfor %}
     </ul>
