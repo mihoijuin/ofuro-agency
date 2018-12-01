@@ -123,13 +123,14 @@ a {
     text-decoration: none;
     color: #454141; }
 
-p {
+p, a {
   font-size: 1.2rem;
   line-height: 1.7; }
 
 /* header */
 header {
   display: flex;
+  justify-content: space-between;
   background-color: #A1E1EF;
   padding: 1.25rem 2.25rem; }
 
@@ -137,6 +138,9 @@ header {
   font-size: 2rem;
   font-weight: bold;
   margin-top: .3rem; }
+
+.header-menu {
+  display: flex; }
 
 /* toppage */
 .top-wrapper {

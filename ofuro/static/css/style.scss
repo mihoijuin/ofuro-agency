@@ -148,7 +148,7 @@ a {
   }
 }
 
-p {
+p, a {
   font-size: 1.2rem;
   line-height: 1.7;
 }
@@ -156,6 +156,7 @@ p {
 /* header */
 header {
   display: flex;
+  justify-content: space-between;
   background-color: $basic_color;
   padding: rem(20px) rem(36px);
 }
@@ -168,9 +169,11 @@ header {
   }
 }
 
+.header-menu {
+  display: flex;
+}
+
 /* toppage */
-
-
 .top-wrapper {
   padding: 6rem 0;
 
