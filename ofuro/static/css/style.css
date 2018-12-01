@@ -224,6 +224,16 @@ header {
 .is-hidden {
   visibility: hidden; }
 
+.staff {
+  display: flex;
+  width: 55%;
+  margin: 0 auto; }
+
+.icon-image {
+  width: 13%;
+  height: 13%;
+  border-radius: 50%; }
+
 /* terms */
 .terms h3 {
   font-size: 1.5rem;
