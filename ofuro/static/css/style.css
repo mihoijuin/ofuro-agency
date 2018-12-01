@@ -220,6 +220,10 @@ header {
   max-height: 28.125rem;
   max-width: 15.625rem; }
 
+/* staffs */
+.is-hidden {
+  visibility: hidden; }
+
 /* terms */
 .terms h3 {
   font-size: 1.5rem;

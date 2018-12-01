@@ -12,10 +12,13 @@
     <h2 class="heading">スタッフ一覧</h2>
     <ul>
       {% for stuff in stuffs %}
-      <li>{{ stuff }}</li>
-      <form action="{% url 'ofuro:page_transition' %}" method="POST">
+      <li>
+        <img class="icon-image" src="{{ stuff.image_L.url }}" alt="">
+        <h3>{{ stuff }}</h3>
+      </li>
+      <form id="order-form" class="" action="{% url 'ofuro:page_transition' %}" method="POST" onsubmit="return resetPoint();">
         {% csrf_token %}
-        <button type="submit" name="order" value="{{ stuff.result_id }}">指名代行</button>
+        <button type="submit" class="is-hidden orderBtn" name="order" value="{{ stuff.result_id }}">指名代行</button>
       </form>
       {% endfor %}
     </ul>
@@ -24,5 +27,5 @@
 {% endblock %}
 
 {% block script %}
-<script src=""></script>
+<script src="{% static 'js/specialOrder.js' %}"></script>
 {% endblock %}
