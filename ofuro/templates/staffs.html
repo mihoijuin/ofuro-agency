@@ -7,6 +7,19 @@
 {% endblock %}
 
 {% block content %}
+<section class="top">
+  <div class="container text-center py-5">
+    <h2 class="heading">スタッフ一覧</h2>
+    <ul>
+      {% for stuff in stuffs %}
+      <li>{{ stuff }}</li>
+      <form action="{% url 'ofuro:page_transition' %}" method="POST">
+        <button value="{{ stuff.result_id }}">指名代行</button>
+      </form>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
 {% endblock %}
 
 {% block script %}

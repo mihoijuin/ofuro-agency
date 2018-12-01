@@ -22,7 +22,8 @@ def page_transition(request):
     # ランダムに一つ選択
     result_path = random.choice(result_paths)
     return render(
-        request, 'page_transition.html',
+        request,
+        'page_transition.html',
         {'result_path': result_path}
         )
 
@@ -32,7 +33,15 @@ def top(request):
 
 
 def staffs(request):
-    return render(request, 'staffs.html')
+    # スタッフ名一覧を取得
+    stuff_list = OfuroResult.objects.all()
+    return render(
+        request,
+        'staffs.html',
+        {
+            'stuffs': stuff_list,
+        }
+    )
 
 
 def wait(request):
