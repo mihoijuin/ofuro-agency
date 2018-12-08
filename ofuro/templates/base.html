@@ -38,17 +38,19 @@
       <div class="header-logo">
         <a href="/"><h1>お風呂代理店♨️🐤</h1></a>
       </div>
+      <nav>
+        <ul class="header-menu">
+          <li><a href="{% url 'ofuro:staffs' %}" class="btn btn-info font-weight-bold">Staffs</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
     {% block content %}{% endblock %}
 
-      <div class="container text-center my-5">
-        <h2 class="heading mt-5 mb-3 pt-5">お風呂代理店スタッフ紹介</h2>
-        <a href="https://goo.gl/forms/Lb3ctDNGVzd9rrLn1" class="text-primary border-bottom border-primary">スタッフになりたい方はこちら</a>
-        <div class="container text-center w-75 mt-4">
-          <a class="twitter-grid" href="https://twitter.com/iju_miho/timelines/1050002819984441345?ref_src=twsrc%5Etfw">お風呂代理店コレクション</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-      </div>
+      <section class="container text-center py-3">
+        <h3 class="heading mb-sm-3">お風呂代理店公式ツイッター</h3>
+        <a class="twitter-timeline" data-width="400" data-height="400" data-theme="light" href="https://twitter.com/ofuro_agency?ref_src=twsrc%5Etfw">Tweets by ofuro_agency</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </section>
 
       <div class="bg-light px-4 py-5">
         <div class="container">
@@ -77,9 +79,8 @@
         <a href="/"><h1>お風呂代理店♨️🐤</h1></a>
       </div>
       <p class="copyright"><small>&copy; 2018 Ofuro Agency</small></p>
-      <div class="footer-contact">
-        <a href="https://twitter.com/ofuro_agency" target="_blank"><span class="fab fa-twitter"></span>お問い合わせ</a>
-      </div>
     </footer>
+    {% block script %}
+    {% endblock %}
   </body>
 </html>

@@ -123,13 +123,15 @@ a {
     text-decoration: none;
     color: #454141; }
 
-p {
+p, a, li {
   font-size: 1.2rem;
   line-height: 1.7; }
 
 /* header */
 header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #A1E1EF;
   padding: 1.25rem 2.25rem; }
 
@@ -137,6 +139,9 @@ header {
   font-size: 2rem;
   font-weight: bold;
   margin-top: .3rem; }
+
+.header-menu a {
+  font-size: 1.5rem; }
 
 /* toppage */
 .top-wrapper {
@@ -216,6 +221,40 @@ header {
   max-height: 28.125rem;
   max-width: 15.625rem; }
 
+/* staffs */
+.is-hidden {
+  filter: brightness(0.6);
+  pointer-events: none; }
+
+.stuff-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around; }
+
+.point-wrapper {
+  width: 30%;
+  height: 20%; }
+  .point-wrapper .card-header {
+    background-color: #e8a2a2; }
+
+.point-text {
+  font-size: 2rem; }
+
+.stuff-list-wrapper {
+  width: 50%; }
+
+.staff {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+.icon-image {
+  width: 30%;
+  height: 30%;
+  border-radius: 50%; }
+
 /* terms */
 .terms h3 {
   font-size: 1.5rem;
@@ -227,7 +266,6 @@ header {
 footer {
   display: flex;
   justify-content: space-between;
-  flex-grow: 2;
   background-color: #A1E1EF;
   padding: 1.25rem 2.25rem; }
 
@@ -239,16 +277,5 @@ footer {
 .copyright {
   color: #7F7F7F;
   margin-top: .5rem; }
-
-.footer-contact a {
-  display: inline-block;
-  border: solid 0.0625rem #7F7F7F;
-  border-radius: .2rem;
-  color: #7F7F7F;
-  font-size: .8rem;
-  font-weight: bold;
-  padding: .7rem; }
-  .footer-contact a:hover {
-    background-color: #cdeff6; }
 
 /*# sourceMappingURL=style.css.map */

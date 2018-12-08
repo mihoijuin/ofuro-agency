@@ -148,7 +148,7 @@ a {
   }
 }
 
-p {
+p, a, li {
   font-size: 1.2rem;
   line-height: 1.7;
 }
@@ -156,6 +156,8 @@ p {
 /* header */
 header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: $basic_color;
   padding: rem(20px) rem(36px);
 }
@@ -168,9 +170,13 @@ header {
   }
 }
 
+.header-menu {
+  a {
+    font-size: 1.5rem;
+  }
+}
+
 /* toppage */
-
-
 .top-wrapper {
   padding: 6rem 0;
 
@@ -261,6 +267,48 @@ header {
   max-width: rem(250px);
 }
 
+/* staffs */
+.is-hidden {
+  filter: brightness(0.6);
+  pointer-events: none;
+}
+
+.stuff-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+
+.point-wrapper {
+  width: 30%;
+  height: 20%;
+  .card-header {
+    background-color: #e8a2a2;
+  }
+}
+
+.point-text {
+  font-size: 2rem;
+}
+
+.stuff-list-wrapper {
+  width: 50%;
+}
+
+.staff {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.icon-image {
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+}
+
 /* terms */
 .terms {
  h3 {
@@ -277,7 +325,6 @@ header {
 footer {
   display: flex;
   justify-content: space-between;
-  flex-grow: 2;
   background-color: $basic_color;
   padding: rem(20px) rem(36px);
 }
@@ -293,20 +340,4 @@ footer {
 .copyright {
   color: $grey;
   margin-top: .5rem;
-}
-
-.footer-contact {
-  a {
-    display: inline-block;
-    border: solid rem(1px) $grey;
-    border-radius: .2rem;
-    color: $grey;
-    font-size: .8rem;
-    font-weight: bold;
-    padding: .7rem;
-
-    &:hover {
-      background-color: lighten($basic_color, 10%);
-    }
-  }
 }

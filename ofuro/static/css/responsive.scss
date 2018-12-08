@@ -8,19 +8,18 @@
 
   /* header */
   header {
-    padding: 1rem;
+    padding: .8rem;
   }
 
   .header-logo {
     h1 {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
   }
 
-  .header-share {
+  .header-menu {
     a {
-      font-size: .5rem;
-      padding: .5rem;
+      font-size: .8rem;
     }
   }
 
@@ -74,6 +73,23 @@
 
   .img-rounded {
     width: 70%;
+  }
+
+  /* staffs */
+  .stuff-wrapper {
+    display: block;
+  }
+
+  .point-wrapper {
+    width: 100%;
+  }
+
+  .staff {
+    width: 100%;
+  }
+
+  .stuff-list-wrapper {
+    width: 100%;
   }
 
   /* footer */
