@@ -16,11 +16,10 @@ def page_transition(request):
         aes = AESCipher()
         result_paths = [aes.encrypt(result_id) for result_id in result_id_list]
         # ネタ枠が多くなるようにする
-        regular_staff = ['monkey', 'dog', 'duck', 'money', 'oyaji']
-        for result_path in result_paths:
-            if result_path in regular_staff:
-                result_paths.extend([result_path] * 10)
-        # ランダムに一つ選択
+        regular_staff = [aes.encrypt('monkey'), aes.encrypt('dog'), aes.encrypt('duck'), aes.encrypt('money'), aes.encrypt('oyaji')]
+        for regular in regular_staff:
+            for i in range(0, 8):
+                result_paths.append(regular)
         result_path = random.choice(result_paths)
     elif request.method == 'POST':
         # 指名代行のとき
