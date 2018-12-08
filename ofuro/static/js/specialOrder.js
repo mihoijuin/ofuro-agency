@@ -6,7 +6,7 @@ if(localStorage.getItem) {
         var orderBtn = document.getElementsByClassName('orderBtn');
         // 全てのボタンにstyleを適用させるため、繰り返し処理
         for(i = 0; i <= orderBtn.length; i++) {
-            orderBtn[i].style.visibility = 'visible';
+            orderBtn[i].classList.remove('is-hidden');
         }
     }
 }

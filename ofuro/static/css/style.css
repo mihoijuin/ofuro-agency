@@ -140,7 +140,8 @@ header {
   margin-top: .3rem; }
 
 .header-menu {
-  display: flex; }
+  display: flex;
+  margin-top: .5rem; }
 
 /* toppage */
 .top-wrapper {
@@ -222,16 +223,34 @@ header {
 
 /* staffs */
 .is-hidden {
-  visibility: hidden; }
+  filter: brightness(0.6);
+  pointer-events: none; }
+
+.stuff-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around; }
+
+.point-wrapper {
+  width: 30%;
+  height: 20%; }
+
+.point-text {
+  font-size: 2rem; }
+
+.stuff-list-wrapper {
+  width: 60%; }
 
 .staff {
+  width: 75%;
+  margin: 0 auto;
   display: flex;
-  width: 55%;
-  margin: 0 auto; }
+  justify-content: space-around;
+  align-items: center; }
 
 .icon-image {
-  width: 13%;
-  height: 13%;
+  width: 20%;
+  height: 20%;
   border-radius: 50%; }
 
 /* terms */

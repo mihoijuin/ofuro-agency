@@ -40,8 +40,7 @@
       </div>
       <nav>
         <ul class="header-menu">
-          <li><a href="{% url 'ofuro:staffs' %}">スタッフ一覧</a></li>
-          <li><p id="pointNav"></p></li>
+          <li><a href="{% url 'ofuro:staffs' %}" class="font-weight-bold">スタッフ一覧</a></li>
         </ul>
       </nav>
     </header>
@@ -84,7 +83,6 @@
         <a href="https://twitter.com/ofuro_agency" target="_blank"><span class="fab fa-twitter"></span>お問い合わせ</a>
       </div>
     </footer>
-    <script src="{% static 'js/showPoint.js' %}"></script>
     {% block script %}
     {% endblock %}
   </body>
