@@ -18,7 +18,7 @@ def page_transition(request):
         # ネタ枠が多くなるようにする
         regular_staff = [aes.encrypt('monkey'), aes.encrypt('dog'), aes.encrypt('duck'), aes.encrypt('money'), aes.encrypt('oyaji')]
         for regular in regular_staff:
-            for i in range(0, 8):
+            for i in range(0, 5):
                 result_paths.append(regular)
         result_path = random.choice(result_paths)
     elif request.method == 'POST':
