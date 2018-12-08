@@ -11,6 +11,7 @@ urlpatterns = [
     path('', views.top, name='top'),
     path('page-transition', views.page_transition, name='page_transition'),
     path('results/<str:enc>', views.result_detail, name='result_detail'),
+    path('staffs', views.staffs, name='staffs'),
     path('wait', views.wait, name='wait'),
 ]
 

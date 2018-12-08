@@ -8,27 +8,55 @@ from .models import GuestIntroduce, OfuroResult
 
 
 def page_transition(request):
-    # idを暗号化したものをURLにしているため全idを取得
-    result_id_list = list(
-        OfuroResult.objects.values_list('result_id', flat=True))
-    # 暗号化
-    aes = AESCipher()
-    result_paths = [aes.encrypt(result_id) for result_id in result_id_list]
-    # ネタ枠が多くなるようにする
-    regular_staff = ['monkey', 'dog', 'duck', 'money', 'oyaji']
-    for result_path in result_paths:
-        if result_path in regular_staff:
-            result_paths.extend([result_path] * 5)
-    # ランダムに一つ選択
-    result_path = random.choice(result_paths)
+    if request.method == 'GET':
+        # idを暗号化したものをURLにしているため全idを取得
+        result_id_list = list(
+            OfuroResult.objects.values_list('result_id', flat=True))
+        # 暗号化
+        aes = AESCipher()
+        result_paths = [aes.encrypt(result_id) for result_id in result_id_list]
+        # ネタ枠が多くなるようにする
+        regular_staff = ['monkey', 'dog', 'duck', 'money', 'oyaji']
+        for result_path in result_paths:
+            if result_path in regular_staff:
+                result_paths.extend([result_path] * 5)
+        # ランダムに一つ選択
+        result_path = random.choice(result_paths)
+    elif request.method == 'POST':
+        # 指名代行のとき
+        try:
+            order = request.POST['order']
+            result_id_list = list(
+                OfuroResult.objects.values_list('result_id', flat=True))
+            if order not in result_id_list:
+                raise Exception
+            else:
+                # 暗号化
+                aes = AESCipher()
+                result_path = aes.encrypt(order)
+        except:
+            return redirect('/wait')
     return render(
-        request, 'page_transition.html',
-        {'result_path': result_path}
+            request,
+            'page_transition.html',
+            {'result_path': result_path}
         )
 
 
 def top(request):
     return render(request, 'top.html')
+
+
+def staffs(request):
+    # スタッフ名一覧をランダムな順番で取得
+    stuff_list = OfuroResult.objects.order_by('?')
+    return render(
+        request,
+        'staffs.html',
+        {
+            'stuffs': stuff_list,
+        }
+    )
 
 
 def wait(request):
