@@ -266,7 +266,6 @@ header {
 footer {
   display: flex;
   justify-content: space-between;
-  flex-grow: 2;
   background-color: #A1E1EF;
   padding: 1.25rem 2.25rem; }
 
@@ -278,16 +277,5 @@ footer {
 .copyright {
   color: #7F7F7F;
   margin-top: .5rem; }
-
-.footer-contact a {
-  display: inline-block;
-  border: solid 0.0625rem #7F7F7F;
-  border-radius: .2rem;
-  color: #7F7F7F;
-  font-size: .8rem;
-  font-weight: bold;
-  padding: .7rem; }
-  .footer-contact a:hover {
-    background-color: #cdeff6; }
 
 /*# sourceMappingURL=style.css.map */

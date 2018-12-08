@@ -325,7 +325,6 @@ header {
 footer {
   display: flex;
   justify-content: space-between;
-  flex-grow: 2;
   background-color: $basic_color;
   padding: rem(20px) rem(36px);
 }
@@ -341,20 +340,4 @@ footer {
 .copyright {
   color: $grey;
   margin-top: .5rem;
-}
-
-.footer-contact {
-  a {
-    display: inline-block;
-    border: solid rem(1px) $grey;
-    border-radius: .2rem;
-    color: $grey;
-    font-size: .8rem;
-    font-weight: bold;
-    padding: .7rem;
-
-    &:hover {
-      background-color: lighten($basic_color, 10%);
-    }
-  }
 }
