@@ -6,14 +6,13 @@
 
   /* header */
   header {
-    padding: 1rem; }
+    padding: .8rem; }
 
   .header-logo h1 {
-    font-size: 1.2rem; }
+    font-size: 1.3rem; }
 
-  .header-share a {
-    font-size: .5rem;
-    padding: .5rem; }
+  .header-menu a {
+    font-size: .8rem; }
 
   /* toppage */
   .top-wrapper {

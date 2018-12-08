@@ -157,6 +157,7 @@ p, a, li {
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: $basic_color;
   padding: rem(20px) rem(36px);
 }
@@ -170,8 +171,9 @@ header {
 }
 
 .header-menu {
-  display: flex;
-  margin-top: .5rem;
+  a {
+    font-size: 1.5rem;
+  }
 }
 
 /* toppage */

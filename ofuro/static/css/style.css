@@ -131,6 +131,7 @@ p, a, li {
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #A1E1EF;
   padding: 1.25rem 2.25rem; }
 
@@ -139,9 +140,8 @@ header {
   font-weight: bold;
   margin-top: .3rem; }
 
-.header-menu {
-  display: flex;
-  margin-top: .5rem; }
+.header-menu a {
+  font-size: 1.5rem; }
 
 /* toppage */
 .top-wrapper {
