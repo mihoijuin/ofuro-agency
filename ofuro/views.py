@@ -48,12 +48,12 @@ def top(request):
 
 def staffs(request):
     # スタッフ名一覧をランダムな順番で取得
-    stuff_list = OfuroResult.objects.order_by('?')
+    staff_list = OfuroResult.objects.order_by('?')
     return render(
         request,
         'staffs.html',
         {
-            'stuffs': stuff_list,
+            'staffs': staff_list,
         }
     )
 

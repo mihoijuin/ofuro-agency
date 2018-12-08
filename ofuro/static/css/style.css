@@ -226,7 +226,7 @@ header {
   filter: brightness(0.6);
   pointer-events: none; }
 
-.stuff-wrapper {
+.staff-wrapper {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-around; }
@@ -240,7 +240,7 @@ header {
 .point-text {
   font-size: 2rem; }
 
-.stuff-list-wrapper {
+.staff-list-wrapper {
   width: 50%; }
 
 .staff {

@@ -21,21 +21,21 @@
   <div class="container text-center py-5">
     <h2 class="heading">スタッフ一覧</h2>
     <a href="https://goo.gl/forms/Lb3ctDNGVzd9rrLn1" class="text-primary border-bottom border-primary">スタッフになりたい方はこちら</a>
-    <div class="stuff-wrapper">
+    <div class="staff-wrapper">
       <section class="card point-wrapper point-text my-3">
         <h2 class="card-header font-weight-bold">お風呂POINT</h2>
         <div class="card-body">
           <p id="pointNav" class="card-text font-weight-bold"></p>
         </div>
       </section>
-      <section class="stuff-list-wrapper">
+      <section class="staff-list-wrapper">
         <ul>
-          {% for stuff in stuffs %}
+          {% for staff in staffs %}
           <li class="card my-3 bg-light">
-            <h3 class="card-header font-weight-bold">{{ stuff }}</h3>
+            <h3 class="card-header font-weight-bold">{{ staff }}</h3>
             <div class="">
               <div class="card-body staff">
-                <img class="icon-image" src="{{ stuff.image_L.url }}" alt="">
+                <img class="icon-image" src="{{ staff.image_L.url }}" alt="">
                 <form id="order-form" class="" action="{% url 'ofuro:page_transition' %}" method="POST" onsubmit="return resetPoint();">
                   {% csrf_token %}
                   <button type="submit" class="is-hidden orderBtn btn btn-primary" name="order" value="{{ stuff.result_id }}">指名代行</button>
