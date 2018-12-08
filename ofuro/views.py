@@ -19,7 +19,7 @@ def page_transition(request):
         regular_staff = ['monkey', 'dog', 'duck', 'money', 'oyaji']
         for result_path in result_paths:
             if result_path in regular_staff:
-                result_paths.extend([result_path] * 5)
+                result_paths.extend([result_path] * 8)
         # ランダムに一つ選択
         result_path = random.choice(result_paths)
     elif request.method == 'POST':
