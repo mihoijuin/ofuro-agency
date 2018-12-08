@@ -49,14 +49,25 @@ def top(request):
 
 def staffs(request):
     # スタッフ名一覧をランダムな順番で取得
-    stuff_list = OfuroResult.objects.order_by('?')
-    return render(
-        request,
-        'staffs.html',
-        {
-            'stuffs': stuff_list,
-        }
-    )
+    try:
+        stuff_list = OfuroResult.objects.order_by('?')
+        return render(
+            request,
+            'staffs.html',
+            {
+                'stuffs': stuff_list,
+            }
+        )
+    except:
+        import traceback
+        from logging import getLogger, DEBUG, StreamHandler
+        errorlogger = getLogger(__name__)
+        handler = StreamHandler()
+        errorlogger.setLevel(DEBUG)
+        handler.setLevel(DEBUG)
+        errorlogger.addHandler(handler)
+        errorlogger.propagate = False
+        errorlogger.debug('ログ：', traceback.format_exc())
 
 
 def wait(request):
