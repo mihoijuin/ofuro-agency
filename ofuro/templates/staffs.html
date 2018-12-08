@@ -34,17 +34,20 @@
           <li class="card my-3 bg-light">
             <!-- リレーションを参照し対応するスタッフの紹介URLを取得する -->
             <!-- staff.guestintroduce_set.valuesはクエリセットを返すので繰り返し処理を使わないとカラムの値を参照できなかった -->
-            {% for url in staff.guestintroduce_set.values %}
-            <h3 class="card-header font-weight-bold"> <a href="{{ url.introduce_url }}" class="border-bottom border-primary text-primary">{{ staff }}</a></h3>
-            {% endfor %}
-            <div class="">
-              <div class="card-body staff">
-                <img class="icon-image" src="{{ staff.image_L.url }}" alt="">
-                <form id="order-form" class="" action="{% url 'ofuro:page_transition' %}" method="POST" onsubmit="return resetPoint();">
-                  {% csrf_token %}
-                  <button type="submit" class="is-hidden orderBtn btn btn-danger" name="order" value="{{ stuff.result_id }}">指名代行</button>
-                </form>
-              </div>
+            <div class="card-header">
+              <h3 class="font-weight-bold staff-name mb-3">{{ staff }}</h3>
+              {% for url in staff.guestintroduce_set.values %}
+              {% if url.introduce_url  %}
+              <a href="{{ url.introduce_url }}" class="btn btn-primary">{{ url.introduce_text }}</a>
+              {% endif %}
+              {% endfor %}
+            </div>
+            <div class="card-body staff">
+              <img class="icon-image" src="{{ staff.image_L.url }}" alt="">
+              <form id="order-form" class="" action="{% url 'ofuro:page_transition' %}" method="POST" onsubmit="return resetPoint();">
+                {% csrf_token %}
+                <button type="submit" class="is-hidden orderBtn btn btn-danger" name="order" value="{{ stuff.result_id }}">指名代行</button>
+              </form>
             </div>
           </li>
           {% endfor %}
