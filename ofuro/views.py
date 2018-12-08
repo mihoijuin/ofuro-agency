@@ -24,27 +24,18 @@ def page_transition(request):
         result_path = random.choice(result_paths)
     elif request.method == 'POST':
         # 指名代行のとき
-        order = request.POST['order']
-        result_id_list = list(
-            OfuroResult.objects.values_list('result_id', flat=True))
-        if order not in result_id_list:
-            raise Exception
-        else:
-            # 暗号化
-            aes = AESCipher()
-            result_path = aes.encrypt(order)
-        # try:
-        #     order = request.POST['order']
-        #     result_id_list = list(
-        #         OfuroResult.objects.values_list('result_id', flat=True))
-        #     if order not in result_id_list:
-        #         raise Exception
-        #     else:
-        #         # 暗号化
-        #         aes = AESCipher()
-        #         result_path = aes.encrypt(order)
-        # except:
-        #     return redirect('/wait')
+        try:
+            order = request.POST['order']
+            result_id_list = list(
+                OfuroResult.objects.values_list('result_id', flat=True))
+            if order not in result_id_list:
+                raise Exception
+            else:
+                # 暗号化
+                aes = AESCipher()
+                result_path = aes.encrypt(order)
+        except:
+            return redirect('/wait')
     return render(
             request,
             'page_transition.html',
@@ -57,8 +48,8 @@ def top(request):
 
 
 def staffs(request):
-    # スタッフ名一覧を取得
-    stuff_list = OfuroResult.objects.all()
+    # スタッフ名一覧をランダムな順番で取得
+    stuff_list = OfuroResult.objects.order_by('?')
     return render(
         request,
         'staffs.html',
