@@ -251,9 +251,10 @@ header {
   align-items: center; }
 
 .icon-image {
-  width: 30%;
-  height: 30%;
-  border-radius: 50%; }
+  width: 55%;
+  height: auto;
+  border-radius: 1rem;
+  max-height: 350px; }
 
 /* terms */
 .terms h3 {
