@@ -32,7 +32,11 @@
         <ul>
           {% for staff in staffs %}
           <li class="card my-3 bg-light">
-            <h3 class="card-header font-weight-bold">{{ staff }}</h3>
+            <!-- リレーションを参照し対応するスタッフの紹介URLを取得する -->
+            <!-- staff.guestintroduce_set.valuesはクエリセットを返すので繰り返し処理を使わないとカラムの値を参照できなかった -->
+            {% for url in staff.guestintroduce_set.values %}
+            <h3 class="card-header font-weight-bold"> <a href="{{ url.introduce_url }}">{{ staff }}</a></h3>
+            {% endfor %}
             <div class="">
               <div class="card-body staff">
                 <img class="icon-image" src="{{ staff.image_L.url }}" alt="">
