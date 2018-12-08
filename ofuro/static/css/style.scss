@@ -280,6 +280,9 @@ header {
 .point-wrapper {
   width: 30%;
   height: 20%;
+  .card-header {
+    background-color: #e8a2a2;
+  }
 }
 
 .point-text {
@@ -287,7 +290,7 @@ header {
 }
 
 .stuff-list-wrapper {
-  width: 60%;
+  width: 50%;
 }
 
 .staff {
@@ -299,8 +302,8 @@ header {
 }
 
 .icon-image {
-  width: 20%;
-  height: 20%;
+  width: 30%;
+  height: 30%;
   border-radius: 50%;
 }
 

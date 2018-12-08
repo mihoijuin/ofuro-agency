@@ -234,12 +234,14 @@ header {
 .point-wrapper {
   width: 30%;
   height: 20%; }
+  .point-wrapper .card-header {
+    background-color: #e8a2a2; }
 
 .point-text {
   font-size: 2rem; }
 
 .stuff-list-wrapper {
-  width: 60%; }
+  width: 50%; }
 
 .staff {
   width: 75%;
@@ -249,8 +251,8 @@ header {
   align-items: center; }
 
 .icon-image {
-  width: 20%;
-  height: 20%;
+  width: 30%;
+  height: 30%;
   border-radius: 50%; }
 
 /* terms */
