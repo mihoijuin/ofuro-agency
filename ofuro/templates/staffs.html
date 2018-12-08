@@ -35,14 +35,14 @@
             <!-- リレーションを参照し対応するスタッフの紹介URLを取得する -->
             <!-- staff.guestintroduce_set.valuesはクエリセットを返すので繰り返し処理を使わないとカラムの値を参照できなかった -->
             {% for url in staff.guestintroduce_set.values %}
-            <h3 class="card-header font-weight-bold"> <a href="{{ url.introduce_url }}">{{ staff }}</a></h3>
+            <h3 class="card-header font-weight-bold"> <a href="{{ url.introduce_url }}" class="border-bottom border-primary text-primary">{{ staff }}</a></h3>
             {% endfor %}
             <div class="">
               <div class="card-body staff">
                 <img class="icon-image" src="{{ staff.image_L.url }}" alt="">
                 <form id="order-form" class="" action="{% url 'ofuro:page_transition' %}" method="POST" onsubmit="return resetPoint();">
                   {% csrf_token %}
-                  <button type="submit" class="is-hidden orderBtn btn btn-primary" name="order" value="{{ stuff.result_id }}">指名代行</button>
+                  <button type="submit" class="is-hidden orderBtn btn btn-danger" name="order" value="{{ stuff.result_id }}">指名代行</button>
                 </form>
               </div>
             </div>
