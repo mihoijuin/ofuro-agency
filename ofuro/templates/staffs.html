@@ -46,7 +46,7 @@
               <img class="icon-image" src="{{ staff.image_L.url }}" alt="">
               <form id="order-form" class="" action="{% url 'ofuro:page_transition' %}" method="POST" onsubmit="return resetPoint();">
                 {% csrf_token %}
-                <button type="submit" class="is-hidden orderBtn btn btn-danger" name="order" value="{{ stuff.result_id }}">指名代行</button>
+                <button type="submit" class="is-hidden orderBtn btn btn-danger" name="order" value="{{ staff.result_id }}">指名代行</button>
               </form>
             </div>
           </li>
